@@ -1,4 +1,4 @@
-let gallrySections = document.querySelectorAll('section.gallery img')
+let galleryImages = document.querySelectorAll('section.gallery div.image img')
 let galleryLinks = document.querySelectorAll('section.gallery div.navigation a')
 
 let setBreakers = () => {
@@ -24,7 +24,6 @@ let setImagesFlex = () => {
     })
 }
 
-
 Promise.all(
     Array.from(document.images)
         .filter(img => !img.complete)
@@ -39,14 +38,14 @@ let galleryScroll = () => {
    let scrollCenterPosition = window.scrollY + window.innerHeight / 2
    let currentTag
 
-   gallrySections.forEach( section => {
-        if ( currentTag != section.getAttribute('data-tag') ) {
-            currentTag = section.getAttribute('data-tag')
+   galleryImages.forEach( galleryImage => {
+        if ( currentTag != galleryImage.getAttribute('data-tag') ) {
+            currentTag = galleryImage.getAttribute('data-tag')
             tagImages = document.querySelectorAll('img[data-tag=' + currentTag + ']')
             lastTagImage = tagImages[tagImages.length - 1]
-
-            let top = tagImages[0].offsetTop + lastTagImage.offsetHeight / 2
-            let bottom = lastTagImage.offsetTop + lastTagImage.offsetHeight
+            
+            let top = tagImages[0].parentElement.offsetTop + tagImages[0].parentElement.offsetHeight / 2
+            let bottom = lastTagImage.parentElement.offsetTop + lastTagImage.parentElement.offsetHeight
             let link = document.querySelector('a[href="#' + currentTag + '"]')
 
             if ( scrollCenterPosition >= top && scrollCenterPosition <= bottom ) {

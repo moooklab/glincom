@@ -49,19 +49,13 @@ section.gallery {
   }
 }
 section.gallery div.navigation {
+  pointer-events: none;
   position: absolute;
   display: grid;
   top: 0;
   left: 0;
   width: 100%;
   height: calc(100% - 7.5px);
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 @media (max-width: 1280px) {
   section.gallery div.navigation {
@@ -75,18 +69,31 @@ section.gallery div.navigation {
     background-color: rgba(0, 0, 0, 0.73);
     -webkit-box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
             box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    pointer-events: auto;
   }
 }
-section.gallery div.navigation.open {
-  -webkit-transform: translateX(0%);
-      -ms-transform: translateX(0%);
-          transform: translateX(0%);
+section.gallery div.navigation div.wrap {
+  pointer-events: auto;
 }
-section.gallery div.navigation.open div.cross img:first-child {
-  display: none;
-}
-section.gallery div.navigation.open div.cross img:last-child {
-  display: block;
+@media (max-width: 1280px) {
+  section.gallery div.navigation.open {
+    -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  section.gallery div.navigation.open div.cross img:first-child {
+    display: none;
+  }
+  section.gallery div.navigation.open div.cross img:last-child {
+    display: block;
+  }
 }
 section.gallery div.navigation div.cross {
   display: none;
@@ -182,13 +189,30 @@ section.gallery div.navigation a.active {
   color: black;
 }
 section.gallery div.image {
+  position: relative;
+  cursor: pointer;
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 25%;
           flex: 1 1 25%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-section.gallery div.image:nth-child(3n) {
-  margin-left: 1px;
+section.gallery div.image:nth-child(8n+1)::after, section.gallery div.image:nth-child(8n+3)::after, section.gallery div.image:nth-child(8n+6)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.53;
+  pointer-events: none;
+}
+section.gallery div.image:hover {
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
 }
 section.gallery div.breaker {
   display: block;
@@ -250,6 +274,8 @@ dialog[data-modal-name=lightbox] div.cross {
   height: 73px;
   background-color: black;
   border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 640px) {
   dialog[data-modal-name=lightbox] div.cross {
@@ -257,6 +283,11 @@ dialog[data-modal-name=lightbox] div.cross {
     right: 12px;
     background-color: transparent;
   }
+}
+dialog[data-modal-name=lightbox] div.cross:hover {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 dialog[data-modal-name=lightbox] div.images {
   height: 100%;
@@ -315,16 +346,28 @@ dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow {
   height: 73px;
   background-color: black;
   border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 @media (max-width: 640px) {
   dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow {
     background-color: transparent;
   }
 }
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
 dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow:first-child {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow:first-child:hover {
+  -webkit-transform: rotate(180deg) scale(1.05);
+      -ms-transform: rotate(180deg) scale(1.05);
+          transform: rotate(180deg) scale(1.05);
 }
 dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow.swiper-button-disabled {
   opacity: 0.3;
