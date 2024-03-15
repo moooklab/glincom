@@ -1,0 +1,47 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet", href="css/style.css")
+        link(rel='stylesheet', href='plugins/swiper/swiper-bundle.min.css')
+
+        script(defer, src='plugins/swiper/swiper-bundle.min.js')
+        script(defer, src="scripts/modal.js")
+        script(defer, src="scripts/lightbox.js")
+        script(defer, src="scripts/gallery.js")
+
+        title Glincom
+    body
+
+        section.gallery
+
+            - for( x = 1; x <= 13; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="architecture", lightbox)
+
+            - for( x = 14; x <= 42; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="public", lightbox)
+
+            - for( x = 43; x <= 47; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="landscaping", lightbox)
+
+            - for( x = 48; x <= 56; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="roof", lightbox)
+
+            - for( x = 57; x <= 66; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
+
+            - for( x = 67; x <= 69; x++)
+                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
+
+            div.navigation
+                div(onclick="this.parentElement.classList.toggle('open')").cross
+                    img(src="../images/navigation_menu.svg", alt="")
+                    img(src="../images/navigation_cross.svg", alt="")
+                div.wrap
+                    a(href="#architecture") Архитектура
+                    a(href="#public") общественное пространство
+                    a(href="#landscaping") благоустройство
+                    a(href="#roof") эксплуатируемая кровля
+                    a(href="#interior") интерьеры

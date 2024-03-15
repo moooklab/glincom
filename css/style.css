@@ -1,0 +1,345 @@
+@font-face {
+  font-family: "RoadRadio";
+  src: url(/fonts/RoadRadio.woff2);
+}
+* {
+  margin: unset;
+  padding: unset;
+  outline: unset;
+  border: unset;
+  list-style-type: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  font-variant-numeric: lining-nums;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html:has(dialog[open]) {
+  overflow-y: hidden;
+  margin-right: var(--scrollbar-width);
+}
+
+section.gallery {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 7.5px 15px;
+  overflow: clip;
+}
+@media (max-width: 640px) {
+  section.gallery {
+    gap: 2.5px 5px;
+  }
+}
+section.gallery div.navigation {
+  position: absolute;
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 7.5px);
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+@media (max-width: 1280px) {
+  section.gallery div.navigation {
+    left: unset;
+    right: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+section.gallery div.navigation.open {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+section.gallery div.navigation.open div.cross img:first-child {
+  display: none;
+}
+section.gallery div.navigation.open div.cross img:last-child {
+  display: block;
+}
+section.gallery div.navigation div.cross {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+section.gallery div.navigation div.cross img {
+  width: 41px;
+  height: 31px;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  position: sticky;
+  top: 13px;
+}
+section.gallery div.navigation div.cross img:first-child {
+  display: block;
+}
+section.gallery div.navigation div.cross img:last-child {
+  display: none;
+}
+@media (max-width: 1280px) {
+  section.gallery div.navigation div.cross {
+    display: block;
+  }
+}
+section.gallery div.navigation div.wrap {
+  justify-self: center;
+  font-family: "RoadRadio", sans-serif;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: sticky;
+  top: calc(100% - 58px - 23px);
+  bottom: 23px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-width: 100%;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.73);
+  -webkit-box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+@media (max-width: 1280px) {
+  section.gallery div.navigation div.wrap {
+    margin: 13px 17px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3px;
+    top: 13px;
+  }
+}
+section.gallery div.navigation a {
+  color: white;
+  display: block;
+  padding: 20px 30px;
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width: 1280px) {
+  section.gallery div.navigation a {
+    background: rgba(172, 172, 172, 0.57);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    font-size: 12px;
+  }
+}
+section.gallery div.navigation a.active {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  color: black;
+}
+section.gallery div.image {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+}
+section.gallery div.image:nth-child(3n) {
+  margin-left: 1px;
+}
+section.gallery div.breaker {
+  display: block;
+  width: 100%;
+  height: 0px;
+}
+section.gallery img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+dialog {
+  margin: auto;
+}
+dialog::-ms-backdrop {
+  position: fixed;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.85);
+}
+dialog::backdrop {
+  position: fixed;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.85);
+}
+dialog::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+dialog[data-modal-name=lightbox] {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: transparent;
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=lightbox] {
+    padding: 12px;
+  }
+}
+dialog[data-modal-name=lightbox] div.container, dialog[data-modal-name=lightbox] div.swiper {
+  width: 100%;
+  height: 100%;
+}
+dialog[data-modal-name=lightbox] div.cross {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 9;
+  cursor: pointer;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  width: 73px;
+  height: 73px;
+  background-color: black;
+  border-radius: 50%;
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=lightbox] div.cross {
+    top: 12px;
+    right: 12px;
+    background-color: transparent;
+  }
+}
+dialog[data-modal-name=lightbox] div.images {
+  height: 100%;
+  width: 100%;
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-slide {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+dialog[data-modal-name=lightbox] div.images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 161px -webkit-max-content;
+  grid-template-columns: max-content 161px max-content;
+  grid-gap: 51px;
+  z-index: 9;
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=lightbox] div.images div.swiper-navigation {
+    width: 100%;
+    grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+    grid-template-columns: max-content 1fr max-content;
+    padding: 0 12px;
+  }
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow {
+  cursor: pointer;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  width: 73px;
+  height: 73px;
+  background-color: black;
+  border-radius: 50%;
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow {
+    background-color: transparent;
+  }
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow:first-child {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.arrow.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.line {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=lightbox] div.images div.swiper-navigation div.line {
+    background-color: transparent;
+  }
+}
+dialog[data-modal-name=lightbox] div.thumbs {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

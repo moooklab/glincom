@@ -1,0 +1,253 @@
+// Media Query
+$breakpoints: ("xs": 480px, "s": 640px, "m": 960px, "l": 1280px, "xl": 1600px, 'xxl': 1920px)
+@mixin screen($breakpoint)
+    @if map-has-key($breakpoints, $breakpoint)
+        $breakpoint: map-get($breakpoints, $breakpoint)
+        @media (max-width: $breakpoint)
+            @content
+    @else
+        @media (max-width: $breakpoint)
+            @content
+
+@font-face
+    font-family: 'RoadRadio'
+    src: url(/fonts/RoadRadio.woff2)
+    
+*
+    margin: unset
+    padding: unset
+    outline: unset
+    border: unset
+    list-style-type: none
+    text-decoration: none
+    box-sizing: border-box
+    box-shadow: unset
+    font-variant-numeric: lining-nums
+    appearance: none
+
+html, body
+    font-family: Arial, Helvetica, sans-serif
+    scroll-behavior: smooth
+
+html:has(dialog[open])
+    overflow-y: hidden
+    margin-right: var(--scrollbar-width)
+
+section.gallery
+    position: relative
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: calc(15px / 2) 15px
+    overflow: clip
+    +screen(s)
+        gap: calc(5px / 2) 5px
+
+    div.navigation
+        position: absolute
+        display: grid
+        top: 0
+        left: 0
+        width: 100%
+        height: calc(100% - 15px / 2)
+        transform: translateX(100%)
+        transition: transform .2s
+        +screen(l)
+            left: unset
+            right: 0
+            width: max-content
+            backdrop-filter: blur(10px)
+            background-color: rgba(0,0,0,0.73)
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4)
+
+        &.open
+            transform: translateX(0%)
+            div.cross
+                img
+                    &:first-child
+                        display: none
+                    &:last-child
+                        display: block
+
+        div.cross
+            display: none
+            cursor: pointer
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            img
+                width: 41px
+                height: 31px
+                transform: translateX(-100%)
+                position: sticky
+                top: 13px
+                &:first-child
+                    display: block
+                &:last-child
+                    display: none
+            +screen(l)
+                display: block
+
+        div.wrap
+            justify-self: center
+            font-family: 'RoadRadio', sans-serif
+            text-transform: uppercase
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            position: sticky
+            top: calc(100% - 58px - 23px)
+            bottom: 23px
+            width: max-content
+            height: max-content
+            max-width: 100%
+            backdrop-filter: blur(10px)
+            background-color: rgba(0,0,0,0.73)
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4)
+            margin-bottom: 30px
+            margin-top: 30px
+            +screen(l)
+                margin: 13px 17px
+                flex-direction: column
+                gap: 3px
+                top: 13px
+
+        a
+            color: white
+            display: block
+            padding: 20px 30px
+            font-size: 14px
+            font-weight: 700
+            +screen(l)
+                background: rgba(172, 172, 172, 0.57)
+                backdrop-filter: blur(10px)
+                font-size: 12px
+                
+            &.active
+                background: rgba(255, 255, 255, 0.95)
+                box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15)
+                backdrop-filter: blur(15px)
+                color: black
+
+
+    div.image
+        width: 100%
+        flex: 1 1 25%
+        &:nth-child(3n)
+            margin-left: 1px
+
+    div.breaker
+        display: block
+        width: 100%
+        height: 0px
+
+    img
+        width: 100%
+        height: auto
+        vertical-align: middle
+
+dialog
+    margin: auto
+    &::backdrop
+        position: fixed
+        inset: 0px
+        background: rgba(0,0,0,.85)
+    &::-webkit-scrollbar
+        width: 0
+        height: 0
+
+dialog[data-modal-name=lightbox]
+    width: 100%
+    height: 100%
+    max-width: 100%
+    max-height: 100%
+    background-color: transparent
+    +screen(s)
+        padding: 12px
+
+    div.container, div.swiper
+        width: 100%
+        height: 100%
+
+    div.cross
+        position: absolute
+        top: 28px
+        right: 28px
+        z-index: 9
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        width: 73px
+        height: 73px
+        background-color: black
+        border-radius: 50%
+        +screen(s)
+            top: 12px
+            right: 12px
+            background-color: transparent
+
+    div.images
+        height: 100%
+        width: 100%
+
+        div.swiper-slide
+            display: grid
+            align-items: center
+            justify-items: center
+            height: 100%
+
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: block
+            object-fit: contain
+
+        div.swiper-navigation
+            position: absolute
+            left: 50%
+            bottom: 26px
+            transform: translateX(-50%)
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 161px max-content
+            grid-gap: 51px
+            z-index: 9
+            +screen(s)
+                width: 100%
+                grid-template-columns: max-content 1fr max-content
+                padding: 0 12px
+
+            div.arrow
+                cursor: pointer
+                display: grid
+                align-items: center
+                justify-items: center
+                width: 73px
+                height: 73px
+                background-color: black
+                border-radius: 50%
+                +screen(s)
+                    background-color: transparent
+
+                &:first-child
+                    transform: rotate(180deg)
+
+                &.swiper-button-disabled
+                    opacity: 0.3
+                    pointer-events: none
+
+            div.line
+                width: 100%
+                height: 1px
+                background-color: white
+                +screen(s)
+                    background-color: transparent
+
+    div.thumbs
+        display: none
