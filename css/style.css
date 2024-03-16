@@ -208,11 +208,16 @@ section.gallery div.image:nth-child(8n+1)::after, section.gallery div.image:nth-
   background-color: black;
   opacity: 0.53;
   pointer-events: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 section.gallery div.image:hover {
   -webkit-transform: scale(1.01);
       -ms-transform: scale(1.01);
           transform: scale(1.01);
+}
+section.gallery div.image:hover:nth-child(8n+1)::after, section.gallery div.image:hover:nth-child(8n+3)::after, section.gallery div.image:hover:nth-child(8n+6)::after {
+  opacity: 0;
 }
 section.gallery div.breaker {
   display: block;
