@@ -51,7 +51,7 @@ let createSlide = (element) => {
         slide.classList.add('swiper-slide')
 
         image = document.createElement('img')
-        image.src = element.src
+        image.src = element.getAttribute('lightbox-src')
 
     slide.append(image)
     return slide

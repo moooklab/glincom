@@ -18,19 +18,19 @@ html(lang="ru")
         section.gallery
 
             - for( x = 1; x <= 13; x++)
-                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="architecture", lightbox)
+                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="architecture", lightbox)
 
             - for( x = 14; x <= 42; x++)
-                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="public", lightbox)
+                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="public", lightbox)
 
             - for( x = 43; x <= 47; x++)
-                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="landscaping", lightbox)
+                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="landscaping", lightbox)
 
             - for( x = 48; x <= 56; x++)
-                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="roof", lightbox)
+                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="roof", lightbox)
 
             - for( x = 57; x <= 69; x++)
-                div.image: img(src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
+                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
 
             div.navigation
                 div(onclick="this.parentElement.classList.toggle('open')").cross
