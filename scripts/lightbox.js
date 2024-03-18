@@ -39,7 +39,8 @@ lightboxImages.forEach( (lightboxImage, index) => {
             }
         })
 
-        imagesSwiper.slideTo(index)
+
+        imagesSwiper.slideTo(index, 0)
 
     })
 })
