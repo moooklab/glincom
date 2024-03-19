@@ -29,6 +29,9 @@ lightboxImages.forEach( (lightboxImage, index) => {
         // Создаем слайдер
         imagesSwiper = new Swiper(images.querySelector('div.swiper'), {
             slidesPerView: 1,
+            keyboard: {
+                enabled: true,
+            },
             navigation: {
                 prevEl: 'dialog[data-modal-name=lightbox] div.swiper-navigation > *:first-child',
                 nextEl: 'dialog[data-modal-name=lightbox] div.swiper-navigation > *:last-child',

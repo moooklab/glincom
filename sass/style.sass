@@ -11,7 +11,13 @@ $breakpoints: ("xs": 480px, "s": 640px, "m": 960px, "l": 1280px, "xl": 1600px, '
 
 @font-face
     font-family: 'RoadRadio'
-    src: url(/fonts/RoadRadio.woff2)
+    font-weight: 700
+    src: url(../fonts/RoadRadio-Bold.woff2)
+
+@font-face
+    font-family: 'RoadRadio'
+    font-weight: 300
+    src: url(../fonts/RoadRadio-Light.woff2)
     
 *
     margin: unset
@@ -109,14 +115,15 @@ section.gallery
             width: max-content
             height: max-content
             max-width: 100%
-            backdrop-filter: blur(10px)
+            backdrop-filter: blur(15px)
             background-color: rgba(0,0,0,0.73)
-            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.4)
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4)
             margin-bottom: 30px
             margin-top: 30px
             +screen(l)
                 margin: 13px 17px
                 flex-direction: column
+                backdrop-filter: blur(10px)
                 gap: 3px
                 top: 13px
 
@@ -125,7 +132,9 @@ section.gallery
             display: block
             padding: 20px 30px
             font-size: 14px
-            font-weight: 700
+            font-weight: 300
+            opacity: .57
+            transition: opacity .2s
             +screen(l)
                 background: rgba(172, 172, 172, 0.57)
                 backdrop-filter: blur(10px)
@@ -136,6 +145,8 @@ section.gallery
                 box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15)
                 backdrop-filter: blur(15px)
                 color: black
+                font-weight: 700
+                opacity: 1
 
     div.image
         position: relative
