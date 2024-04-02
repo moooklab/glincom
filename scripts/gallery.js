@@ -35,34 +35,42 @@ Promise.all(
 })
 
 let galleryScroll = () => {
-   let scrollCenterPosition = window.scrollY + window.innerHeight / 2
-   let currentTag
+    let currentTag
+    var count = 0
 
-   galleryImages.forEach( galleryImage => {
+    galleryImages.forEach( galleryImage => {
         if ( currentTag != galleryImage.getAttribute('data-tag') ) {
             currentTag = galleryImage.getAttribute('data-tag')
             tagImages = document.querySelectorAll('img[data-tag=' + currentTag + ']')
             lastTagImage = tagImages[tagImages.length - 1]
             
-            let top = tagImages[0].parentElement.offsetTop + tagImages[0].parentElement.offsetHeight / 2
+            let top = tagImages[0].parentElement.offsetTop
             let bottom = lastTagImage.parentElement.offsetTop + lastTagImage.parentElement.offsetHeight
             let link = document.querySelector('a[href="#' + currentTag + '"]')
 
-            if ( scrollCenterPosition >= top && scrollCenterPosition <= bottom ) {
+            
+            document.body.parentNode.scrollTop <= 100 ? scrollPosition = document.body.parentNode.scrollTop : scrollPosition = document.body.parentNode.scrollTop + document.body.parentNode.clientHeight
+            
+
+            if ( scrollPosition >= top && scrollPosition <= bottom ) {
                 galleryLinks.forEach( link => { link.classList.remove('active') })
                 link?.classList.add('active')
             }
         }
-
-   })
+    })
 }
 
-galleryLinks.forEach((link) => {
+galleryLinks.forEach( link => {
     link.addEventListener('click', event => {
         let hash = event.target.hash.split('#')[1]
         let image = document.querySelectorAll('img[data-tag=' + hash  + ']')[0]
+        let index = [].indexOf.call(galleryLinks, link)
+
+        index > 1 ? direction = 'end' : direction = 'start'
+
         image.scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: direction
         })
     })
 })
