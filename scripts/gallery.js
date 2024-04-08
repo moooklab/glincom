@@ -1,3 +1,4 @@
+let gallerySection = document.querySelector('section.gallery')
 let galleryImages = document.querySelectorAll('section.gallery div.image img')
 let galleryLinks = document.querySelectorAll('section.gallery div.navigation a')
 
@@ -36,7 +37,6 @@ Promise.all(
 
 let galleryScroll = () => {
     let currentTag
-    var count = 0
 
     galleryImages.forEach( galleryImage => {
         if ( currentTag != galleryImage.getAttribute('data-tag') ) {
@@ -44,14 +44,12 @@ let galleryScroll = () => {
             tagImages = document.querySelectorAll('img[data-tag=' + currentTag + ']')
             lastTagImage = tagImages[tagImages.length - 1]
             
-            let top = tagImages[0].parentElement.offsetTop
-            let bottom = lastTagImage.parentElement.offsetTop + lastTagImage.parentElement.offsetHeight
+            let top = tagImages[0].parentElement.offsetTop + gallerySection.offsetTop
+            let bottom = lastTagImage.parentElement.offsetTop + lastTagImage.parentElement.offsetHeight + gallerySection.offsetTop
             let link = document.querySelector('a[href="#' + currentTag + '"]')
 
+            document.body.parentNode.scrollTop <= gallerySection.offsetTop + 100 ? scrollPosition = document.body.parentNode.scrollTop : scrollPosition = document.body.parentNode.scrollTop + document.body.parentNode.clientHeight  
             
-            document.body.parentNode.scrollTop <= 100 ? scrollPosition = document.body.parentNode.scrollTop : scrollPosition = document.body.parentNode.scrollTop + document.body.parentNode.clientHeight
-            
-
             if ( scrollPosition >= top && scrollPosition <= bottom ) {
                 galleryLinks.forEach( link => { link.classList.remove('active') })
                 link?.classList.add('active')
