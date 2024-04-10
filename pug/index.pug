@@ -15,34 +15,80 @@ html(lang="ru")
         title Glincom
     body
 
-        section.gallery
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
 
-            - for( x = 1; x <= 13; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="architecture", lightbox)
+        main
 
-            - for( x = 14; x <= 42; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="public", lightbox)
+            section.gallery
 
-            - for( x = 43; x <= 47; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="landscaping", lightbox)
+                - for( x = 1; x <= 13; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="architecture", lightbox)
 
-            - for( x = 48; x <= 56; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="roof", lightbox)
+                - for( x = 14; x <= 42; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="public", lightbox)
 
-            - for( x = 57; x <= 65; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
-            
-            - for( x = 66; x <= 69; x++)
-                div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="environment", lightbox)
+                - for( x = 43; x <= 47; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="landscaping", lightbox)
 
-            div.navigation
-                div(onclick="this.parentElement.classList.toggle('open')").cross
-                    img(src="images/navigation_menu.svg", alt="")
-                    img(src="images/navigation_cross.svg", alt="")
-                div.wrap
-                    a(href="#architecture").active Архитектура
-                    a(href="#public") общественное пространство
-                    a(href="#landscaping") благоустройство
-                    a(href="#roof") эксплуатируемая кровля
-                    a(href="#interior") интерьеры
-                    a(href="#environment") окружение
+                - for( x = 48; x <= 56; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="roof", lightbox)
+
+                - for( x = 57; x <= 65; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="interior", lightbox)
+                
+                - for( x = 66; x <= 69; x++)
+                    div.image: img(src="images/gallery/thumbnails/" + x + ".webp", lightbox-src="images/gallery/" + x + ".webp", loading="lazy", data-tag="environment", lightbox)
+
+                div.navigation
+                    div(onclick="this.parentElement.classList.toggle('open')").cross
+                        img(src="images/navigation_menu.svg", alt="")
+                        img(src="images/navigation_cross.svg", alt="")
+                    div.wrap
+                        a(href="#architecture").active Архитектура
+                        a(href="#public") общественное пространство
+                        a(href="#landscaping") благоустройство
+                        a(href="#roof") эксплуатируемая кровля
+                        a(href="#interior") интерьеры
+                        a(href="#environment") окружение
+
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br

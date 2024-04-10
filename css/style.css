@@ -35,6 +35,10 @@ html:has(dialog[open]) {
   margin-right: var(--scrollbar-width);
 }
 
+main {
+  position: relative;
+}
+
 section.gallery {
   position: relative;
   display: -webkit-box;
