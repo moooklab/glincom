@@ -2,7 +2,6 @@ let gallery = document.querySelector('section.gallery')
 let galleryImages = gallery.querySelectorAll('div.image img')
 let galleryLinks = gallery.querySelectorAll('div.navigation a')
 let globalPercentages = new Array()
-let scrollPercents
 
 let setBreakers = () => {
     var count = 1
@@ -37,46 +36,46 @@ Promise.all(
     galleryScroll()
 })
 
-let galleryScroll = () => {
-    tags = new Array()
-    percentages = new Array()
-    pixels = new Array()
+// let galleryScroll = () => {
+//     tags = new Array()
+//     percentages = new Array()
+//     pixels = new Array()
     
-    document.querySelectorAll('[data-tag]').forEach( element => { tags.push( element.getAttribute('data-tag') )  })
-    tags = [...new Set(tags)]
+//     document.querySelectorAll('[data-tag]').forEach( element => { tags.push( element.getAttribute('data-tag') )  })
+//     tags = [...new Set(tags)]
 
-    galleryHeight = gallery.offsetHeight
-    galleryTopPosition = gallery.getBoundingClientRect().top + document.body.parentNode.scrollTop
+//     galleryHeight = gallery.offsetHeight
+//     galleryTopPosition = gallery.getBoundingClientRect().top + document.body.parentNode.scrollTop
     
-    tags.forEach( tag => {
-        image = document.querySelector('[data-tag=' + tag + ']')
-        imageTopPosition = image.getBoundingClientRect().top + document.body.parentNode.scrollTop - galleryTopPosition
-        percentages.push( imageTopPosition / ( galleryHeight / 100 ) )
-    })
+//     tags.forEach( tag => {
+//         image = document.querySelector('[data-tag=' + tag + ']')
+//         imageTopPosition = image.getBoundingClientRect().top + document.body.parentNode.scrollTop - galleryTopPosition
+//         percentages.push( imageTopPosition / ( galleryHeight / 100 ) )
+//     })
 
-    globalPercentages = percentages
+//     globalPercentages = percentages
 
-    percentages.forEach( (percent, index) => {
-        if( getElementScrollPosition( gallery ) > percent ) {
-            galleryLinks.forEach( link => { link.classList.remove('active') })
-            galleryLinks[index].classList.add('active')
-        }
-    })
+//     percentages.forEach( (percent, index) => {
+//         if( getElementScrollPosition( gallery ) > percent ) {
+//             galleryLinks.forEach( link => { link.classList.remove('active') })
+//             galleryLinks[index].classList.add('active')
+//         }
+//     })
 
-}
+// }
 
-galleryLinks.forEach( (link, index) => {
-    link.addEventListener('click', event => {
-        varPos = galleryTopPosition + (globalPercentages[index] * ((gallery.scrollHeight - window.innerHeight) / 100)) + 10
-        window.scrollTo({
-            top: varPos,
-        })
-    })
-})
+// galleryLinks.forEach( (link, index) => {
+//     link.addEventListener('click', event => {
+//         varPos = galleryTopPosition + (globalPercentages[index] * ((gallery.scrollHeight - window.innerHeight) / 100)) + 10
+//         window.scrollTo({
+//             top: varPos,
+//         })
+//     })
+// })
 
-function getElementScrollPosition(element){
-    return (window.scrollY - galleryTopPosition) / (gallery.scrollHeight - window.innerHeight) * 100
-}
+// function getElementScrollPosition(element){
+//     return (window.scrollY - galleryTopPosition) / (gallery.scrollHeight - window.innerHeight) * 100
+// }
 
 // let galleryScroll = () => {
 //     let currentTag
@@ -115,5 +114,20 @@ function getElementScrollPosition(element){
 //         })
 //     })
 // })
+
+galleryLinks.forEach( link => {
+    link.addEventListener('click', event => {
+        let hash = event.target.hash.split('#')[1]
+        let image = document.querySelectorAll('img[data-tag=' + hash  + ']')[0]
+
+        galleryLinks.forEach( link => { link.classList.remove('active') })
+        link.classList.add('active')
+
+        image.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+})
 
 window.addEventListener('scroll', galleryScroll)
