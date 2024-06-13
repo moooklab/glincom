@@ -1,0 +1,436 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet", href="css/about.css")
+        link(rel='stylesheet', href='plugins/swiper/swiper-bundle.min.css')
+
+        script(defer, src='plugins/swiper/swiper-bundle.min.js')
+        script(defer, src="scripts/modal.js")
+        script(defer, src="scripts/main.js")
+        script(defer, src="scripts/accordion.js")
+        script(defer, src="scripts/loaded.js", data-reload)
+        script(defer, src="scripts/phone.js", data-reload)
+
+        title Glincom
+    body
+
+        main
+
+            section.main
+                div.container
+                    div.logo_wrap
+                        div.animation
+                            div.logo
+                                strong.gl gl
+                                strong.in in
+                                strong.vom com
+                                div.border
+                                    span
+                                    span
+                                    span
+                                    span
+                            div.full
+                                div.gleaning
+                                    strong Gleaning
+                                    span Тщательно собранные по крупицам
+                                div.investment
+                                    strong Investment
+                                    span Тщательно собранные по крупицам
+                                div.combinations
+                                    strong Combinations
+                                    span Комбинации
+                            div.text 
+                                span Gleaning Investment Combinations
+
+            section.about
+                div.container
+                    h2 о компании
+                    div.text
+                        strong GLINCOM — Инвестиционная компания, реализующая проекты в области коммерческой недвижимости на территории московского региона
+                        p Инвестируем в объекты строительства и реконструкции с целью повышения качества недвижимости, создания торговых, офисных центров и комплексов апартаментов, отвечающих всем тенденциям современного рынка. 
+                        p Компания объединяет в себе высококлассных специалистов отрасли, имеющих многолетний опыт в управлении проектами и развитии недвижимости. 
+                        p Зарабатываем репутацию, потому что понимаем ее значение для реализации долгосрочных перспектив, лежащих в основе нашей модели ведения бизнеса.
+                    div.advantages
+                        div.advantage
+                            strong 11
+                            span лет на рынке
+                        div.advantage
+                            strong 182 700
+                            span квадратных метров #[br]в портфеле
+                        div.advantage
+                            strong 12
+                            span реализованных #[br]проектов
+                        div.advantage
+                            strong 8
+                            span проектов #[br]в реализации
+
+            section.projects
+                div.container
+                    div.slider
+                        div.swiper-navigation
+                            div.arrow: include ../images/swiper_arrow.svg
+                            div.pages
+                                span.hide 0
+                                div.divide
+                                span 2
+                            div.arrow: include ../images/swiper_arrow.svg
+                        div.swiper
+                            div.swiper-wrapper
+                                -for( x = 0; x <= 6; x++ )
+                                    div.swiper-slide
+                                        div(style="background-image: url('images/gallery/19.webp')").image
+                                        div.project
+                                            div.logo
+                                                img(src="images/verdi.svg", alt="")
+                                            div.text
+                                                span.adress готовность проекта 85% #[br]САО, ул. Верхняя Масловка, д. 20
+                                                span.description клубный дом премиум-класса с эксклюзивным дизайном около м. Динамо
+                        div.swiper-pagination
+
+            section.advantages
+                div.container
+                    h2 наши приоритеты
+
+                    div.list
+                        div.advantage
+                            div.text
+                                h3 Качество
+                                span Внимательное отношение к каждой детали играет решающую роль в обеспечении высокого качества строительства, долговечности и безопасности построенных объектов, а также создает уникальные и комфортные пространства для проживания и работы.
+                            div(style="background-image: url('images/gallery/56.webp')").image
+
+                        div.advantage
+                            div.text
+                                h3 Репутация
+                                span Поддержание положительного образа компании помогает нам привлекать новых клиентов, крупные инвестиции, укреплять партнерские отношения и поддерживать штат из высококвалифицированных специалистов.
+                            div(style="background-image: url('images/gallery/57.webp')").image
+
+                        div.advantage
+                            div.text
+                                h3 Бережное отношение #[br]к истории
+                                span При разработке проекта редевелопмента наш приоритет – сохранение исторического наследия и уникальных архитектурных особенностей здания. Это необходимо для поддержания связи с прошлым и устойчивого развития города.
+                            div(style="background-image: url('images/gallery/58.webp')").image
+
+                        div.advantage
+                            div.text
+                                h3 Концептуальность
+                                span Комплексный подход к созданию проектов включает в себя анализ рынка, определение потребностей клиентов, разработку инновационных концепций, учет экологических и эстетических аспектов, а также обеспечение высокого качества строительства и управления проектом.
+                            div(style="background-image: url('images/gallery/59.webp')").image
+
+            section.awards
+                div.container
+                    h2 Награды
+
+                    div.swiper
+                        div.swiper-wrapper
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/1.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span european PROPERTY awards
+                                    div.table
+                                        div.row
+                                            div.cell РИТм
+                                            div.cell победитель
+                                        div.row
+                                            div.cell SINATRA
+                                            div.cell победитель
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/2.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span ProEstate & TOBY Awards 
+                                    div.table
+                                        div.row
+                                            div.cell VIVALDI 
+                                            div.cell финалист
+                                        div.row
+                                            div.cell VERDI
+                                            div.cell победитель
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/3.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span CRE Moscow Awards
+                                    div.table
+                                        div.row
+                                            div.cell Riverdale 
+                                            div.cell финалист
+                                        div.row
+                                            div.cell Babystore
+                                            div.cell финалист
+                                        div.row
+                                            div.cell GLINCOM
+                                            div.cell финалист
+                                        div.row
+                                            div.cell РИТМ
+                                            div.cell финалист
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/4.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span рекорды рынка недвижимости
+                                    div.table
+                                        div.row
+                                            div.cell SINATRA 
+                                            div.cell победитель
+                                        div.row
+                                            div.cell VIVALDI
+                                            div.cell финалист
+                                        div.row
+                                            div.cell VERDI
+                                            div.cell победитель
+                                        div.row
+                                            div.cell РИТМ
+                                            div.cell финалист
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/5.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span Move Realty Awards 
+                                    div.table
+                                        div.row
+                                            div.cell VERDI
+                                            div.cell финалист
+                                        div.row
+                                            div.cell РИТМ
+                                            div.cell финалист
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/6.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span Urban
+                                    div.table
+                                        div.row
+                                            div.cell VERDI
+                                            div.cell финалист
+                            div.swiper-slide
+                                div.award
+                                    img(src="images/awards/7.png", alt="").logotype
+                                    div.title
+                                        img(src="images/awards/star.svg", alt="")
+                                        span Arendator Awards
+                                    div.table
+                                        div.row
+                                            div.cell РИТМ
+                                            div.cell финалист
+                        div.swiper-pagination
+
+            section.team
+                div.container
+                    h2 команда
+
+                    div.list
+                        div.person
+                            img(src="images/team/1.webp", alt="")
+                            div.text
+                                strong Иван #[br]татаринов
+                                span исполнительный директор
+                        div.person
+                            img(src="images/team/2.webp", alt="")
+                            div.text
+                                strong Кристина #[br]Дудко
+                                span Коммерческий директор
+                        div.person
+                            img(src="images/team/3.webp", alt="")
+                            div.text
+                                strong Кристина #[br]Анохина
+                                span Финансовый директор
+                        div.person
+                            img(src="images/team/4.webp", alt="")
+                            div.text
+                                strong Олег #[br]Харчев
+                                span Директор департамента развития
+                        div.person
+                            img(src="images/team/5.webp", alt="")
+                            div.text
+                                strong Алексей #[br]Солодовников
+                                span Директор департамента строительства
+                        div.person
+                            img(src="images/team/6.webp", alt="")
+                            div.text
+                                strong Виктория #[br]Белякова
+                                span Руководитель службы клиентского сервиса
+                        div.person
+                            img(src="images/team/7.webp", alt="")
+                            div.text
+                                strong Виктория #[br]Панина
+                                span Руководитель отдела продаж
+                        div.person
+                            img(src="images/team/8.webp", alt="")
+                            div.text
+                                strong Николай #[br]Матюхин
+                                span Руководитель отдела аренды
+
+            section.career
+                div.container
+                    h2 Карьера
+                    div.vacancies
+                        div.text
+                            h3 вакансии
+                            span GLINCOM предоставляет своим сотрудникам возможность роста, и способствует каждому в достижении поставленных целей, так как для нас развитие сотрудника, предопределяет развитие Компании в целом. Мы предлагаем относиться к работе, как к своему личному делу, когда вы работаете в первую очередь на себя, используя ресурсы компании. У нас каждый может конвертировать решенные задачи в дополнительную личную выгоду.
+                        div.list
+                            div.accordion
+                                div.accordion_caption
+                                    strong ИНВЕСТИЦИОННЫЙ МЕНЕДЖЕР
+                                    include ../images/accordion_cross.svg
+                                div.accordion_content
+                                    div.accordion_overflow
+                                        div.accordion_wrap
+                                            p Требуемый опыт работы: 3–6 лет
+                                            br
+                                            p Полная занятость, полный день
+                                            br
+                                            strong Требования:
+                                            br
+                                            ul
+                                                li • Высшее образование (желательно юридическое или финансовое);
+                                                li • Опыт работы на аналогичной должности в инвестиционной и/или девелоперской компании от 3-х лет;
+                                                li • Опыт приобретения объектов недвижимости;
+                                                li • Умение вести переговоры, коммуникабельность.
+                                            br
+                                            strong Обязанности:
+                                            br
+                                            ul
+                                                li • Поиск объектов к приобретению под заданные критерии;
+                                                li • Координация действий подразделений компании по анализу инвестиционной привлекательности объектов, координация проведения Due Diligence;
+                                                li • Градостроительный анализ;
+                                                li • Защита проектов на инвест. комитете;
+                                                li • Участие в торгах на электронных площадках;
+                                                li • Участие в переговорах, ведение сделок по покупке объектов;
+                                                li • Оценка рисков проекта и подготовка предложений по их устранению, минимизации и влиянию на проект;
+                                                li • Участие в развитии существующих проектов компании;
+                                                li • Подготовка официальных документов, писем, ответов на запросы со стороны органов государственной власти;
+                                            br
+                                            strong Условия:
+                                            br
+                                            p График работы 5/2 с 10:00 до 19:00;
+                                            p Оформление по ТК РФ.
+
+                                            br
+                                            br
+                                            br
+                                            a.button Откликнуться на вакансию
+                            div.accordion
+                                div.accordion_caption
+                                    strong Архитектор
+                                    include ../images/accordion_cross.svg
+                                div.accordion_content
+                                    div.accordion_overflow
+                                        div.accordion_wrap
+                                            p Требуемый опыт работы: 3–6 лет
+                                            br
+                                            p Полная занятость, полный день
+                                            br
+                                            strong Требования:
+                                            br
+                                            ul
+                                                li • Высшее образование (желательно юридическое или финансовое);
+                                                li • Опыт работы на аналогичной должности в инвестиционной и/или девелоперской компании от 3-х лет;
+                                                li • Опыт приобретения объектов недвижимости;
+                                                li • Умение вести переговоры, коммуникабельность.
+                                            br
+                                            strong Обязанности:
+                                            br
+                                            ul
+                                                li • Поиск объектов к приобретению под заданные критерии;
+                                                li • Координация действий подразделений компании по анализу инвестиционной привлекательности объектов, координация проведения Due Diligence;
+                                                li • Градостроительный анализ;
+                                                li • Защита проектов на инвест. комитете;
+                                                li • Участие в торгах на электронных площадках;
+                                                li • Участие в переговорах, ведение сделок по покупке объектов;
+                                                li • Оценка рисков проекта и подготовка предложений по их устранению, минимизации и влиянию на проект;
+                                                li • Участие в развитии существующих проектов компании;
+                                                li • Подготовка официальных документов, писем, ответов на запросы со стороны органов государственной власти;
+                                            br
+                                            strong Условия:
+                                            br
+                                            p График работы 5/2 с 10:00 до 19:00;
+                                            p Оформление по ТК РФ.
+
+                                            br
+                                            br
+                                            br
+                                            a.button Откликнуться на вакансию
+
+            section.cooperation
+                div.container
+                    div.text
+                        h2 сотрудничество
+                        span GLINCOM рассматривает любые варианты эффективного сотрудничества, предполагающие взаимную выгоду, долгосрочную перспективу, а также нацеленные на результат. Мы предлагаем брокерам гарантированные комиссии по самым высоким ставкам на рынке. Для проектировщиков и строителей мы выступаем заказчиком, ставящим предельно четкие технические задания. Другим компаниям мы предлагаем логичный алгоритм взаимодействия и понятную систему принятия решений с нашей стороны, чего ждем и от других.
+                    div.advantages
+                        div.advantage
+                            div.image: img(src="images/cooperation_1.jpg", alt="")
+                            div.description
+                                h4 Выплачиваем брокерам комиссии за привлечение арендаторов и покупателей
+                                div.buttons
+                                    a(href="index.html").button
+                                        span заявка #[br]на фиксацию #[br]клиента
+                                        div.arrow: include ../images/swiper_arrow.svg
+                                    a(href="index.html").button
+                                        span кабинет #[br]брокера
+                                        div.arrow: include ../images/swiper_arrow.svg
+                        div.advantage
+                            div.image: img(src="images/cooperation_2.jpg", alt="")
+                            div.description
+                                h4 Рассматриваем приобритение объектов недвижимости для реализации новых проектов
+                                div.buttons
+                                    a(href="index.html", data-modal-target="project").button
+                                        span Предложить #[br]проект
+                                        div.arrow: include ../images/swiper_arrow.svg
+                        div.advantage
+                            div.image: img(src="images/cooperation_3.jpg", alt="")
+                            div.description
+                                h4 Мы выступаем заказчиком, ставящим предельно четкие технические задания
+                                div.buttons
+                                    a(href="index.html").button
+                                        span Участвовать #[br]в тендере
+                                        div.arrow: include ../images/swiper_arrow.svg
+                    div.tenders
+                        h3 Тендеры
+                        div.list
+                            div.tender
+                                strong Архитектурная Дизайн-концепция
+                                span РАЗРАБОТКА ДИЗАЙН-ПРОЕКТа фасада, благоустройства, МОП
+                            div.tender
+                                strong Обследование, обмеры, Проектирование
+                                span РАЗРАБОТКА ПРОЕКТНО-СМЕТНОЙ ДОКУМЕНТАЦИИ
+                            div.tender
+                                strong ОБЩЕСТРОИТЕЛЬНЫЕ РАБОТЫ
+                                span СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong ВНЕШНИЕ инженерные СЕТИ
+                                span ПРОЕКТИРОВАНИЕ И СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong ВНУТРЕННИЕ инженерные СЕТИ
+                                span ПРОЕКТИРОВАНИЕ И СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong ФАСАДНЫЕ РАБОТЫ
+                                span СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong ОТДЕЛОЧНЫЕ РАБОТЫ
+                                span СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong БЛАГОУСТРОЙСТВО ТЕРРИТОРИИ
+                                span СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ
+                            div.tender
+                                strong Строительные материалы и оборудование
+                                span ЗАкупка и поставка
+
+
+
+
+
+
+
+
+
+

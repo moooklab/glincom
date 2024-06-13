@@ -21,7 +21,7 @@ fetchModals()
 async function fetchModals () {
     const response = await fetch(filePath)
     data = await response.text()
-    // createDialog('menu')
+    // createDialog('project')
 }
 
 

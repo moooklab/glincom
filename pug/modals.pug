@@ -11,3 +11,22 @@ dialog(data-modal-name="lightbox")
         div.thumbs
             div.swiper
                 div.swiper-wrapper
+
+dialog(data-modal-name="project")
+    div.container
+        div(data-modal-close).cross: include ../images/lightbox_cross.svg
+        div.form
+            h3 Предложить проект
+            form
+                input(type="text", placeholder="Ваше имя")
+                input(type="tel", placeholder="телефон*", required)
+                input(type="email", placeholder="e-mail*", required)
+                input(type="text", placeholder="Запрос")
+                label.file
+                    input(type="file", name="file")
+                    span.button + прикрепить файл
+                    span.filename
+                label.checkbox
+                    input(type="checkbox", name="", checked)
+                    span согласие на обработку персональных данных
+                button Отправить

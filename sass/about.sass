@@ -1,0 +1,1324 @@
+// Media Query
+$breakpoints: ("xs": 480px, "s": 640px, "m": 960px, "l": 1280px, "xl": 1600px, 'xxl': 1920px)
+$content-maxwidth: 1438px
+
+@mixin screen($breakpoint)
+    @if map-has-key($breakpoints, $breakpoint)
+        $breakpoint: map-get($breakpoints, $breakpoint)
+        @media (max-width: $breakpoint)
+            @content
+    @else
+        @media (max-width: $breakpoint)
+            @content
+
+@font-face
+    font-family: 'RoadRadio'
+    font-weight: 700
+    src: url(../fonts/RoadRadio-Bold.woff2)
+
+@font-face
+    font-family: 'RoadRadio'
+    font-weight: 300
+    src: url(../fonts/RoadRadio-Light.woff2)
+
+@font-face
+    font-family: 'Muller'
+    font-weight: 400
+    src: url(../fonts/MullerRegular.woff2)
+
+*
+    margin: unset
+    padding: unset
+    outline: unset
+    border: unset
+    list-style-type: none
+    text-decoration: none
+    box-sizing: border-box
+    box-shadow: unset
+    font-variant-numeric: lining-nums
+    appearance: none
+
+\:root
+    --gap: 30px
+    --full: minmax(var(--gap), 1fr)
+    --content: min(#{$content-maxwidth}, 100% - var(--gap) * 2)
+    --breakout: minmax(0, 91px)
+    +screen(m)
+        --gap: 20px
+
+h1, h2, h3, h4, strong
+    font-family: 'RoadRadio', sans-serif
+    
+html, body
+    font-family: 'Muller', sans-serif
+    text-size-adjust: 100%
+    scroll-behavior: smooth
+    appearance: none
+    overflow-x: clip
+
+section
+    width: 100%
+    position: relative
+    display: grid
+    grid-template-columns: [full-start] var(--full) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--full) [full-end]
+    & > *
+        grid-column: content
+    .full
+        grid-column: full
+    .breakout
+        grid-column: breakout
+
+html:has(dialog[open])
+    overflow-y: hidden
+    margin-right: var(--scrollbar-width)
+
+main
+    position: relative
+
+section.main
+    height: 100vh
+    background-color: black
+    color: white
+    animation: showcontent 1s 7s forwards
+
+    div.container
+        display: grid
+        align-items: center
+        justify-items: center
+        grid-column: full
+
+    div.logo_wrap
+        width: 100vw
+        transform-origin: center center
+        +screen(xl)
+            transform: scale(0.7)
+        +screen(l)
+            transform: scale(0.6)
+        +screen(m)
+            transform: scale(0.4)
+        +screen(s)
+            transform: scale(0.2)
+
+    div.animation
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        width: max-content
+        div.logo
+            position: absolute
+            display: grid
+            font-size: 80px
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            opacity: 0
+            animation: show 1s 1s forwards, centerlogo .5s 4s forwards, scale 1s 5s forwards
+            text-transform: uppercase
+            left: 0
+            strong.gl
+                margin-right: 326px
+                animation: margingl .7s 4s forwards
+            strong.in
+                margin-right: 463px
+                animation: marginin .7s 4s forwards
+            div.border
+                position: absolute
+                top: -10%
+                left: -10%
+                width: 120%
+                height: 150%
+                span:nth-child(1)
+                    display: block
+                    width: 0px
+                    height: 10px
+                    background-color: white
+                    position: absolute
+                    top: 0
+                    right: 0
+                    animation: width .1s 6s forwards
+                span:nth-child(2)
+                    display: block
+                    width: 10px
+                    height: 0px
+                    background-color: white
+                    position: absolute
+                    top: 0
+                    left: 0
+                    animation: height .1s 6.1s forwards
+                span:nth-child(3)
+                    display: block
+                    width: 0px
+                    height: 10px
+                    background-color: white
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    animation: width .1s 6.2s forwards
+                span:nth-child(4)
+                    display: block
+                    width: 10px
+                    height: 0px
+                    background-color: white
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    animation: height .1s 6.3s forwards
+        div.full
+            display: grid
+            grid-template-columns: repeat(3, max-content)
+            grid-gap: 36px
+            width: max-content
+            div
+                display: grid
+                strong
+                    font-size: 80px
+                span
+                    font-size: 23px
+            div.gleaning
+                opacity: 0
+                animation: show 1s 0s forwards, hide 1s 3s forwards
+                span
+                    animation: show 1s 0s forwards
+            div.investment
+                opacity: 0
+                animation: show 1s 0.25s forwards, hide 1s 3s forwards
+                span
+                    animation: show 1s 0.25s forwards
+            div.combinations
+                opacity: 0
+                animation: show 1s 0.5s forwards, hide 1s 3s forwards
+                span
+                    animation: show 1s 0.5s forwards
+
+        div.text
+            opacity: 0
+            animation: show 1s 6s forwards
+            font-size: 30px
+            text-align: center
+            margin-top: 24px
+            text-transform: uppercase
+
+section.about
+    padding-top: 78px
+    padding-bottom: 104px
+    background-color: black
+    color: white
+    +screen(m)
+        padding-bottom: 22px
+        padding-top: 22px
+
+    div.container
+        grid-column: breakout
+
+    h2
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        font-weight: 400
+        font-size: 53px
+        color: #fff
+        margin-bottom: 58px
+        +screen(m)
+            font-size: 22px
+            margin-bottom: 34px
+        &::before
+            content: '01'
+            display: grid
+            align-items: center
+            width: max-content
+            height: 134px
+            padding-right: 43px
+            margin-right: 44px
+            border-right: 1px solid white
+            font-weight: 400
+            font-size: 95px
+            +screen(m)
+                height: 105px
+                font-size: 64px
+                padding-right: 27px
+                margin-right: 27px
+
+    div.text
+        display: grid
+        strong
+            font-weight: 400
+            font-size: 27px
+            margin-bottom: 48px
+            +screen(m)
+                font-size: 18px
+                margin-bottom: 24px
+        p
+            font-weight: 400
+            font-size: 16px
+            color: #808080
+            & + p
+                margin-top: 26px
+
+
+    div.advantages
+        display: grid
+        align-items: start
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: space-between
+        margin-top: 104px
+        +screen(m)
+            grid-auto-flow: unset
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 24px
+            margin-top: 22px
+        +screen(s)
+            grid-template-columns: 1fr
+
+        div.advantage
+            display: grid
+
+        strong
+            font-weight: 700
+            font-size: 84px
+
+        span
+            font-family: 'RoadRadio'
+            font-weight: 400
+            font-size: 18px
+            color: #808080
+
+section.projects
+    user-select: none
+    background-color: black
+    color: white
+
+    div.container
+        grid-column: full
+
+    div.swiper
+        width: 100%
+        min-width: 0
+        aspect-ratio: 16 / 9
+        background-color: rgba(255,255,255,0.05)
+        +screen(m)
+            aspect-ratio: 1 / 1
+        +screen(s)
+            aspect-ratio: 3 / 4
+
+    div.swiper-slide
+        display: grid
+        align-items: end
+
+    div.swiper-navigation
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        align-items: center
+        justify-content: center
+        grid-gap: 24px
+        width: 100%
+        position: absolute
+        bottom: 175px
+        z-index: 9
+        +screen(m)
+            display: none
+        div.arrow
+            cursor: pointer
+            display: grid
+            align-items: center
+            justify-items: center
+            width: 75px
+            height: 75px
+            border: 1px solid rgba(255,255,255,0.4)
+            border-radius: 50%
+            transition: all .2s
+            svg path
+                transition: all .2s
+            &:last-child
+                transform: rotate(180deg)
+            &.swiper-button-disabled
+                pointer-events: none
+                opacity: 0.3
+            &:hover
+                background-color: white
+                svg path
+                    stroke: black
+        div.pages
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 24px
+            align-items: center
+            font-weight: 400
+            font-size: 28px
+            color: #fff
+            span.hide
+                opacity: 0
+            div.divide
+                width: 104px
+                height: 1px
+                background-color: white
+
+    div.swiper-pagination
+        position: absolute
+        top: unset
+        left: unset
+        right: unset
+        bottom: 16px
+        grid-auto-flow: column
+        grid-auto-columns: 1fr
+        grid-gap: 5px
+        display: none
+        padding-left: var(--gap)
+        padding-right: var(--gap)
+        +screen(m)
+            display: grid
+        span
+            width: 100%
+            height: 4px
+            border-radius: unset
+            margin: unset !important
+            background-color: #090808
+            opacity: 1
+            &.swiper-pagination-bullet-active
+                background-color: #808080
+
+    div.project
+        position: relative
+        width: 100%
+        display: grid
+        justify-content: center
+        grid-template-columns: max-content auto
+        grid-gap: 9px
+        margin-top: 28px
+        margin-bottom: 44px
+        z-index: 9
+        +screen(m)
+            padding-left: var(--gap)
+            padding-right: var(--gap)
+        +screen(s)
+            grid-template-columns: 1fr
+            justify-items: center
+
+        div.logo
+            display: grid
+            align-items: center
+            justify-items: center
+            width: 320px
+            background-color: white
+            +screen(m)
+                width: 240px
+            +screen(s)
+                width: 100%
+                padding-top: 15px
+                padding-bottom: 15px
+                max-width: 345px
+            img
+                width: 100%
+                height: 100%
+                object-fit: contain
+                object-position: center center
+                max-width: 50%
+                max-height: 50%
+                +screen(s)
+                    max-width: 70%
+                    max-height: 70%
+
+        div.text
+            display: grid
+            grid-template-columns: 1fr 2fr
+            grid-gap: 28px
+            background-color: white
+            color: #090808
+            padding: 30px 54px
+            max-width: 740px
+            width: 100%
+            +screen(m)
+                padding: 30px
+                grid-template-columns: 1fr
+                grid-gap: 24px
+            +screen(s)
+                display: none
+            span.adress
+                font-size: 10px
+                line-height: 127%
+                text-transform: uppercase
+            span.description
+                font-size: 14px
+                line-height: 127%
+                text-transform: uppercase
+
+    div.image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-size: cover
+        background-position: center center
+        border-image: fill 1 linear-gradient(136deg, rgba(0, 0, 0, 0.37) 50%, rgba(10, 10, 10, 0) 75%, rgba(19, 19, 19, 0) 100%)
+
+section.advantages
+    padding-top: 72px
+    padding-bottom: 104px
+    background-color: black
+    color: white
+    +screen(m)
+        padding-top: 28px
+        padding-bottom: 28px
+
+    div.container
+        grid-column: breakout
+
+    h2
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        font-weight: 400
+        font-size: 53px
+        color: #fff
+        margin-bottom: 58px
+        +screen(m)
+            font-size: 22px
+            margin-bottom: 34px
+        &::before
+            content: '02'
+            display: grid
+            align-items: center
+            width: max-content
+            height: 134px
+            padding-right: 43px
+            margin-right: 44px
+            border-right: 1px solid white
+            font-weight: 400
+            font-size: 95px
+            +screen(m)
+                height: 105px
+                font-size: 64px
+                padding-right: 27px
+                margin-right: 27px
+
+    div.list
+        display: grid
+        grid-gap: 138px
+        +screen(m)
+            grid-gap: 36px
+
+    div.advantage
+        counter-increment: list
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(2, 1fr)
+        margin-bottom: 210px
+        +screen(m)
+            grid-template-columns: 1fr
+            margin-bottom: unset
+
+        div.text
+            position: relative
+            display: grid
+            grid-gap: 86px
+            z-index: 1
+            +screen(m)
+                grid-gap: 30px
+            h3
+                font-family: 'Muller', sans-serif
+                display: grid
+                grid-template-columns: max-content auto
+                align-items: center
+                grid-gap: 24px
+                font-weight: 400
+                font-size: 25px
+                text-transform: uppercase
+                +screen(m)
+                    grid-template-columns: 1fr
+                    justify-content: center
+                    justify-items: center
+                    text-align: center
+                    grid-gap: 21px
+                    font-size: 20px
+                &:before, &:after
+                    content: counter(list)
+                    font-family: 'RoadRadio', sans-serif
+                    display: grid
+                    align-items: center
+                    justify-content: center
+                    width: 141px
+                    height: 141px
+                    border: 1px solid white
+                    border-radius: 50%
+                    font-weight: 700
+                    font-size: 70px
+                    +screen(m)
+                        width: 107px
+                        height: 107px
+                        font-size: 48px
+            span
+                font-weight: 400
+                font-size: 40px
+                +screen(l)
+                    font-size: 32px
+                +screen(m)
+                    font-size: 16px
+
+        div.image
+            width: 130%
+            margin-left: -30%
+            height: calc(100% + 210px)
+            background-size: cover
+            border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%)
+            +screen(m)
+                width: 100%
+                aspect-ratio: 324 / 221
+                margin-left: 32px
+                margin-top: -32px
+                height: auto
+                border-image: fill 1 linear-gradient(0deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%)
+
+        &:nth-child(2n-1)
+            div.text
+                h3
+                    &::after
+                        display: none
+
+        &:nth-child(2n)
+            div.text
+                order: 2
+                text-align: right
+                justify-items: end
+                +screen(m)
+                    order: 1
+                    text-align: right
+                    justify-items: center
+                h3
+                    &::after
+                        +screen(m)
+                            display: none
+                    &::before
+                        display: none
+                        +screen(m)
+                            display: grid
+            div.image
+                order: 1
+                margin-left: unset
+                border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0.54) 40%,  rgba(19, 19, 19, 0)100%)
+                +screen(m)
+                    order: 2
+                    margin-left: -32px
+
+section.awards
+    margin-top: 81px
+    margin-bottom: 115px
+    +screen(m)
+        margin-top: 52px
+        margin-bottom: 37px
+
+    h2
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        font-weight: 700
+        font-size: 70px
+        margin-bottom: 58px
+        color: #808080
+        +screen(m)
+            font-size: 22px
+            margin-bottom: 32px
+        &::before
+            content: '03'
+            display: grid
+            align-items: center
+            width: max-content
+            height: 134px
+            padding-right: 43px
+            margin-right: 44px
+            border-right: 1px solid #808080
+            font-weight: 400
+            font-size: 95px
+            +screen(m)
+                height: 105px
+                font-size: 64px
+                padding-right: 27px
+                margin-right: 27px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 0 175px
+        +screen(l)
+            grid-gap: 32px
+
+    div.swiper-slide
+        margin-top: unset !important
+
+    div.swiper-pagination
+        position: static
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: 1fr
+        grid-gap: 4px
+        margin-top: 26px
+        span
+            width: 100%
+            height: 2px
+            background-color: black
+            opacity: 1
+            margin: unset
+            &.swiper-pagination-bullet-active
+                background-color: #808080
+    
+    div.award
+        display: grid
+        align-content: start
+        img.logotype
+            justify-self: center
+            margin-bottom: 36px
+            width: 240px
+            height: 240px
+            object-fit: contain
+            object-position: center bottom
+            +screen(m)
+                width: 160px
+                height: 160px
+        div.title
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr
+            grid-gap: 16px
+            font-family: 'RoadRadio', sans-serif
+            font-weight: 400
+            font-size: 32px
+            color: #090808
+            padding: 12px 0px
+            +screen(m)
+                font-size: 24px
+        div.table
+            position: relative
+            font-family: 'RoadRadio', sans-serif
+            font-weight: 400
+            font-size: 28px
+            color: #090808
+            padding-top: 12px
+            padding-bottom: 12px
+            +screen(m)
+                font-size: 20px
+            div.row
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 0 21px
+                div.cell
+                    margin-top: -1px
+                    border-top: 1px solid #808080
+                    border-bottom: 1px solid #808080
+                    padding: 12px 0px
+                    padding-left: 50px
+                    +screen(m)
+                        padding-left: 4px
+                        padding: 9px 0
+            &:after
+                content: ''
+                position: absolute
+                top: 0
+                left: 50%
+                display: block
+                height: 100%
+                width: 1px
+                background-color: #808080
+
+section.team
+    margin-top: 80px
+    margin-bottom: 75px
+    +screen(m)
+        margin-top: 37px
+        margin-bottom: 24px
+
+    h2
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        font-weight: 700
+        font-size: 70px
+        margin-bottom: 58px
+        color: #808080
+        +screen(m)
+            font-size: 22px
+            margin-bottom: 32px
+        &::before
+            content: '04'
+            display: grid
+            align-items: center
+            width: max-content
+            height: 134px
+            padding-right: 43px
+            margin-right: 44px
+            border-right: 1px solid #808080
+            font-weight: 400
+            font-size: 95px
+            +screen(m)
+                height: 105px
+                font-size: 64px
+                padding-right: 27px
+                margin-right: 27px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-gap: 27px 22px
+        +screen(l)
+            grid-template-columns: repeat(3, 1fr)
+        +screen(m)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+
+        div.person
+            display: grid
+            align-content: start
+            position: relative
+
+            img
+                width: 100%
+                aspect-ratio: 343 / 518
+                object-fit: cover
+                object-position: center center
+                filter: grayscale(1)
+                transition: all .3s
+                +screen(m)
+                    aspect-ratio: 162 / 244
+
+            div.text
+                margin-top: 20px
+                display: grid
+                grid-gap: 6px
+                max-width: 320px
+                +screen(m)
+                    padding: 12px 6px
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    max-width: unset
+                    margin-top: unset
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0,0,0,0.75) 100%)
+                    width: 100%
+                strong
+                    font-family: 'Muller', sans-serif
+                    font-weight: 400
+                    font-size: 22px
+                    text-transform: uppercase
+                    color: #090808
+                    +screen(m)
+                        color: white
+                        font-size: 16px
+                    br
+                        display: none
+                        +screen(m)
+                            display: block
+                span
+                    font-weight: 400
+                    font-size: 22px
+                    color: #808080
+                    +screen(m)
+                        font-size: 12px
+                        color: #B1B1B1
+
+            &:hover
+                img
+                    filter: grayscale(0)
+
+section.career
+    margin-top: 75px
+    margin-bottom: 75px
+    +screen(m)
+        margin-top: 24px
+        margin-bottom: 24px
+
+    h2
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        font-weight: 700
+        font-size: 70px
+        margin-bottom: 58px
+        color: #808080
+        +screen(m)
+            font-size: 22px
+            margin-bottom: 32px
+        &::before
+            content: '05'
+            display: grid
+            align-items: center
+            width: max-content
+            height: 134px
+            padding-right: 43px
+            margin-right: 44px
+            border-right: 1px solid #808080
+            font-weight: 400
+            font-size: 95px
+            +screen(m)
+                height: 105px
+                font-size: 64px
+                padding-right: 27px
+                margin-right: 27px
+
+    div.text
+        margin-bottom: 52px
+        h3
+            font-weight: 700
+            font-size: 44px
+            color: #090808
+            margin-bottom: 68px
+            +screen(m)
+                font-size: 24px
+                margin-bottom: 25px
+        span
+            font-weight: 400
+            font-size: 20px
+            color: #808080
+            +screen(m)
+                font-size: 14px
+        
+    div.accordion
+        margin-top: -1px
+        border-top: 1px solid #9F9F9F
+        border-bottom: 1px solid #9F9F9F
+        div.accordion_caption
+            cursor: pointer
+            display: grid
+            align-items: center
+            grid-template-columns: 1fr max-content
+            grid-gap: 32px
+            padding-top: 24px
+            padding-bottom: 24px
+            font-weight: 700
+            font-size: 18px
+            color: #090808
+            svg
+                transition: all .3s
+        div.accordion_wrap
+            display: grid
+            padding-top: 10px
+            padding-bottom: 30px
+            font-size: 14px
+            strong
+                font-family: 'Muller', sans-serif
+                font-weight: 700
+            a.button
+                display: block
+                width: max-content
+                border: 1px solid black
+                font-weight: 700
+                padding: 12px 16px
+        &.open
+            div.accordion_caption
+                svg
+                    transform: rotate(135deg)
+
+section.cooperation
+    margin-top: 78px
+    margin-bottom: 104px
+    +screen(m)
+        margin-top: 24px
+        margin-bottom: 44px
+
+    div.text
+        display: grid
+        grid-gap: 30px
+        margin-bottom: 34px
+        +screen(m)
+            grid-gap: 25px
+            margin-bottom: 30px
+        h2
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr
+            font-weight: 700
+            font-size: 70px
+            color: #808080
+            +screen(m)
+                font-size: 22px
+            &::before
+                content: '06'
+                display: grid
+                align-items: center
+                width: max-content
+                height: 134px
+                padding-right: 43px
+                margin-right: 44px
+                border-right: 1px solid #808080
+                font-weight: 400
+                font-size: 95px
+                +screen(m)
+                    height: 105px
+                    font-size: 64px
+                    padding-right: 23px
+                    margin-right: 23px
+        span
+            font-size: 20px
+            color: #808080
+            +screen(m)
+                font-size: 14px
+
+    div.advantages
+        display: grid
+        margin-bottom: 50px
+        div.advantage
+            display: grid
+            grid-template-columns: auto 1fr
+            grid-gap: 46px
+            align-items: center
+            +screen(m)
+                grid-gap: 11px
+                &:first-child
+                    position: relative
+                    grid-template-columns: 1fr
+                    div.image
+                        position: absolute
+                        top: 0
+                        left: 0
+                    div.description
+                        h4
+                            display: grid
+                            align-items: center
+                            margin-left: 152px
+                            min-height: 141px
+
+            div.image
+                position: relative
+                width: 100%
+                max-width: 435px
+                aspect-ratio: 1 / 1
+                border: 1px solid black
+                border-radius: 50%
+                +screen(m)
+                    max-width: 141px
+                img
+                    position: relative
+                    left: 21px
+                    top: 21px
+                    width: calc(100% - 42px)
+                    height: calc(100% - 42px)
+                    object-fit: cover
+                    object-position: center center
+                    border-radius: 999px
+                    +screen(m)
+                        left: 6px
+                        top: 6px
+                        width: calc(100% - 12px)
+                        height: calc(100% - 12px)
+            div.description
+                h4
+                    font-family: 'Muller', sans-serif
+                    font-weight: 400
+                    font-size: 36px
+                    line-height: 115%
+                    color: #808080
+                    text-transform: uppercase
+                    margin-bottom: 29px
+                    max-width: 700px
+                    +screen(m)
+                        font-size: 15px
+                        margin-bottom: 11px
+                        max-width: 360px
+                div.buttons
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 11px 37px
+                    a.button
+                        font-family: 'RoadRadio', sans-serif
+                        display: grid
+                        align-items: center
+                        grid-template-columns: max-content max-content
+                        grid-gap: 19px
+                        font-weight: 700
+                        font-size: 20px
+                        line-height: 115%
+                        color: #000
+                        text-transform: uppercase
+                        +screen(m)
+                            font-size: 12px
+                            grid-gap: 11px
+                        div.arrow
+                            width: 90px
+                            height: 90px
+                            border: 1px solid black
+                            border-radius: 50%
+                            display: grid
+                            align-items: center
+                            justify-items: center
+                            transform: rotate(180deg)
+                            +screen(m)
+                                width: 60px
+                                height: 60px
+                                svg
+                                    width: 50%
+                                    height: 50%
+                            svg path
+                                stroke: black
+                                stroke-width: 1px
+
+            &:nth-child(2n)
+                grid-template-columns: auto max-content
+                justify-content: end
+                justify-items: end
+                div.image
+                    order: 2
+                div.description
+                    order: 1
+
+            & + div.advantage
+                // margin-top: -46px
+                +screen(m)
+                    margin-top: 34px
+
+    div.tenders
+        h3
+            font-weight: 700
+            font-size: 44px
+            color: #090808
+            margin-bottom: 34px
+            +screen(m)
+                font-size: 24px
+                margin-bottom: 18px
+        div.tender
+            display: grid
+            grid-gap: 8px
+            border-bottom: 1px solid #9F9F9F
+            padding-top: 12px
+            padding-bottom: 12px
+
+            &:first-child
+                border-top: 1px solid #9F9F9F
+
+            strong
+                font-weight: 700
+                font-size: 18px
+                line-height: 100%
+                color: #090808
+
+            span
+                font-weight: 400
+                font-size: 18px
+                line-height: 100%
+                text-transform: lowercase
+                color: #afafaf
+                +screen(m)
+                    font-size: 12px
+
+dialog
+    margin: auto
+    &::backdrop
+        position: fixed
+        inset: 0px
+        background: rgba(0,0,0,.85)
+    &::-webkit-scrollbar
+        width: 0
+        height: 0
+        
+dialog[data-modal-name=project]
+    width: 100%
+    height: 100%
+    max-width: unset
+    max-height: unset
+    display: grid
+    align-items: center
+    justify-items: center
+    background-color: transparent
+    
+
+    div.cross
+        position: absolute
+        top: 28px
+        right: 28px
+        z-index: 9
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        width: 73px
+        height: 73px
+        background-color: black
+        border-radius: 50%
+        transition: all .3s
+        +screen(s)
+            top: 12px
+            right: 12px
+            background-color: transparent
+
+        &:hover
+            transform: rotate(90deg)
+
+    div.container
+        width: 100%
+        max-width: 867px
+        background: white
+        padding: 20px
+
+    h3
+        font-weight: 400
+        font-size: 32px
+        line-height: 115%
+        color: #090808
+
+    form
+        display: grid
+        font-family: 'RoadRadio', sans-serif
+
+        input[type=text], input[type=tel], input[type=email]
+            font-family: inherit
+            font-weight: 400
+            font-size: 20px
+            line-height: 115%
+            border-bottom: 1px solid #808080
+            padding: 9px 3px
+            margin-top: 19px
+            &::placeholder
+                color: #808080
+                text-transform: uppercase
+
+        label.file
+            margin-top: 47px
+            span.button
+                display: grid
+                align-items: center
+                justify-items: center
+                border: 1px solid #808080
+                width: 100%
+                font-weight: 400
+                font-size: 25px
+                line-height: 100%
+                color: #808080
+                text-transform: uppercase
+                padding: 15px 10px 10px
+            span.filename
+                text-align: center
+                font-weight: 400
+                font-size: 25px
+                line-height: 115%
+                color: #090808
+            input
+                display: none
+            &.added
+                span.button
+                    display: none
+                span.filename
+                    display: block
+
+        label.checkbox
+            display: block
+            margin-top: 18px
+            position: relative
+            padding-left: 37px
+            cursor: pointer
+            position: relative
+
+            input
+                border: unset
+                position: absolute
+                bottom: 0
+                left: 50%
+                z-index: -999
+                opacity: 0
+
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 17px
+                height: 17px
+                border: 1px solid #d9d9d9
+                border-radius: 3px
+
+            &:has(:checked)
+                &::before
+                    background-color: #808080
+                &::after
+                    content: ''
+                    width: 12px
+                    height: 12px
+                    position: absolute
+                    top: 3px
+                    left: 4px
+                    background-image: url(../images/checkbox_tick.svg)
+                    background-position: center center
+                    background-repeat: no-repeat
+                    background-size: contain
+
+            span
+                position: relative
+                display: block
+                font-weight: 400
+                font-size: 20px
+                line-height: 115%
+                color: #808080
+                max-width: 622px
+                
+            a
+                text-decoration: underline
+                &:hover
+                    text-decoration: none
+
+        button
+            font-family: inherit
+            padding: 15px 120px
+            width: 100%
+            max-width: 371px
+            height: 61px
+            background-color: #090808
+            color: white
+            margin-top: 35px
+            font-weight: 400
+            font-size: 20px
+            line-height: 115%
+            text-align: center
+            text-transform: uppercase
+
+@keyframes show 
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes hide 
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+@keyframes margingl
+    0%
+        margin-right: 326px
+    100%
+        margin-right: 0px
+@keyframes marginin
+    0%
+        margin-right: 463px
+    100%
+        margin-right: 0px
+@keyframes centerlogo
+    0%
+        left: 0
+        transform: translateX(0)
+    100%
+        left: 50%
+        transform: translateX(-50%)
+@keyframes scale
+    0%
+        font-size: 80px
+    100%
+        font-size: 140px
+@keyframes width
+    0%
+        width: 0
+    100%
+        width: 100%
+@keyframes height
+    0%
+        height: 0
+    100%
+        height: 100%
+@keyframes showcontent
+    0%
+        height: 100vh
+    100%
+        height: 60vh
+
+
+
+
+
+
+
+
