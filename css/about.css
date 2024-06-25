@@ -1033,6 +1033,7 @@ section.awards div.award div.title {
   font-size: 32px;
   color: #090808;
   padding: 12px 0px;
+  min-height: 94px;
 }
 @media (max-width: 960px) {
   section.awards div.award div.title {
