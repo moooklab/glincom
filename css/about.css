@@ -435,6 +435,9 @@ section.about div.advantages strong {
   font-weight: 700;
   font-size: 84px;
 }
+section.about div.advantages strong::after {
+  content: "0";
+}
 section.about div.advantages span {
   font-family: "RoadRadio";
   font-weight: 400;
