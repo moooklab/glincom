@@ -381,32 +381,48 @@ section.about div.advantages {
   }
 }
 section.about div.advantages.start div.advantage:nth-child(1) strong {
-  -webkit-animation: counter1 1s forwards ease-in-out;
-          animation: counter1 1s forwards ease-in-out;
+  -webkit-animation-name: counter1;
+          animation-name: counter1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   counter-reset: num var(--num);
 }
 section.about div.advantages.start div.advantage:nth-child(1) strong::after {
   content: counter(num);
 }
 section.about div.advantages.start div.advantage:nth-child(2) strong {
-  -webkit-animation: counter2 1s forwards ease-in-out;
-          animation: counter2 1s forwards ease-in-out;
+  -webkit-animation-name: counter2;
+          animation-name: counter2;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   counter-reset: num var(--num);
 }
 section.about div.advantages.start div.advantage:nth-child(2) strong::after {
   content: counter(num);
 }
 section.about div.advantages.start div.advantage:nth-child(3) strong {
-  -webkit-animation: counter3 1s forwards ease-in-out;
-          animation: counter3 1s forwards ease-in-out;
+  -webkit-animation-name: counter3;
+          animation-name: counter3;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   counter-reset: num var(--num);
 }
 section.about div.advantages.start div.advantage:nth-child(3) strong::after {
   content: counter(num);
 }
 section.about div.advantages.start div.advantage:nth-child(4) strong {
-  -webkit-animation: counter4 1s forwards ease-in-out;
-          animation: counter4 1s forwards ease-in-out;
+  -webkit-animation-name: counter4;
+          animation-name: counter4;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   counter-reset: num var(--num);
 }
 section.about div.advantages.start div.advantage:nth-child(4) strong::after {

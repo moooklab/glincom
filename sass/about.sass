@@ -275,25 +275,33 @@ section.about
         &.start
             div.advantage:nth-child(1)
                 strong
-                    animation: counter1 1s forwards ease-in-out
+                    animation-name: counter1
+                    animation-duration: 1s
+                    animation-fill-mode: forwards
                     counter-reset: num var(--num)
                     &::after
                         content: counter(num)
             div.advantage:nth-child(2)
                 strong
-                    animation: counter2 1s forwards ease-in-out
+                    animation-name: counter2
+                    animation-duration: 1s
+                    animation-fill-mode: forwards
                     counter-reset: num var(--num)
                     &::after
                         content: counter(num)
             div.advantage:nth-child(3)
                 strong
-                    animation: counter3 1s forwards ease-in-out
+                    animation-name: counter3
+                    animation-duration: 1s
+                    animation-fill-mode: forwards
                     counter-reset: num var(--num)
                     &::after
                         content: counter(num)
             div.advantage:nth-child(4)
                 strong
-                    animation: counter4 1s forwards ease-in-out
+                    animation-name: counter4
+                    animation-duration: 1s
+                    animation-fill-mode: forwards
                     counter-reset: num var(--num)
                     &::after
                         content: counter(num)
