@@ -11,6 +11,7 @@ html(lang="ru")
         script(defer, src="scripts/modal.js")
         script(defer, src="scripts/main.js")
         script(defer, src="scripts/accordion.js")
+        script(defer, src="scripts/observer.js")
         script(defer, src="scripts/loaded.js", data-reload)
         script(defer, src="scripts/phone.js", data-reload)
 
@@ -38,7 +39,7 @@ html(lang="ru")
                                     span Тщательно собранные по крупицам
                                 div.investment
                                     strong Investment
-                                    span Тщательно собранные по крупицам
+                                    span Инвестиционные
                                 div.combinations
                                     strong Combinations
                                     span Комбинации
@@ -53,18 +54,18 @@ html(lang="ru")
                         p Инвестируем в объекты строительства и реконструкции с целью повышения качества недвижимости, создания торговых, офисных центров и комплексов апартаментов, отвечающих всем тенденциям современного рынка. 
                         p Компания объединяет в себе высококлассных специалистов отрасли, имеющих многолетний опыт в управлении проектами и развитии недвижимости. 
                         p Зарабатываем репутацию, потому что понимаем ее значение для реализации долгосрочных перспектив, лежащих в основе нашей модели ведения бизнеса.
-                    div.advantages
+                    div.advantages.animate
                         div.advantage
-                            strong 11
+                            strong
                             span лет на рынке
                         div.advantage
-                            strong 182 700
+                            strong
                             span квадратных метров #[br]в портфеле
                         div.advantage
-                            strong 12
+                            strong
                             span реализованных #[br]проектов
                         div.advantage
-                            strong 8
+                            strong
                             span проектов #[br]в реализации
 
             section.projects
@@ -99,25 +100,25 @@ html(lang="ru")
                             div.text
                                 h3 Качество
                                 span Внимательное отношение к каждой детали играет решающую роль в обеспечении высокого качества строительства, долговечности и безопасности построенных объектов, а также создает уникальные и комфортные пространства для проживания и работы.
-                            div(style="background-image: url('images/gallery/56.webp')").image
+                            div(style="background-image: url('images/priority/1.webp')").image
 
                         div.advantage
                             div.text
                                 h3 Репутация
                                 span Поддержание положительного образа компании помогает нам привлекать новых клиентов, крупные инвестиции, укреплять партнерские отношения и поддерживать штат из высококвалифицированных специалистов.
-                            div(style="background-image: url('images/gallery/57.webp')").image
+                            div(style="background-image: url('images/priority/2.webp')").image
 
                         div.advantage
                             div.text
                                 h3 Бережное отношение #[br]к истории
                                 span При разработке проекта редевелопмента наш приоритет – сохранение исторического наследия и уникальных архитектурных особенностей здания. Это необходимо для поддержания связи с прошлым и устойчивого развития города.
-                            div(style="background-image: url('images/gallery/58.webp')").image
+                            div(style="background-image: url('images/priority/3.webp')").image
 
                         div.advantage
                             div.text
                                 h3 Концептуальность
                                 span Комплексный подход к созданию проектов включает в себя анализ рынка, определение потребностей клиентов, разработку инновационных концепций, учет экологических и эстетических аспектов, а также обеспечение высокого качества строительства и управления проектом.
-                            div(style="background-image: url('images/gallery/59.webp')").image
+                            div(style="background-image: url('images/priority/4.webp')").image
 
             section.awards
                 div.container
@@ -233,42 +234,42 @@ html(lang="ru")
                             img(src="images/team/1.webp", alt="")
                             div.text
                                 strong Иван #[br]татаринов
-                                span исполнительный директор
+                                span Исполнительный #[br]директор
                         div.person
                             img(src="images/team/2.webp", alt="")
                             div.text
                                 strong Кристина #[br]Дудко
-                                span Коммерческий директор
+                                span Коммерческий #[br]директор
                         div.person
                             img(src="images/team/3.webp", alt="")
                             div.text
                                 strong Кристина #[br]Анохина
-                                span Финансовый директор
+                                span Финансовый #[br]директор
                         div.person
                             img(src="images/team/4.webp", alt="")
                             div.text
                                 strong Олег #[br]Харчев
-                                span Директор департамента развития
+                                span Директор департамента #[br]развития
                         div.person
                             img(src="images/team/5.webp", alt="")
                             div.text
                                 strong Алексей #[br]Солодовников
-                                span Директор департамента строительства
+                                span Директор департамента #[br]строительства
                         div.person
                             img(src="images/team/6.webp", alt="")
                             div.text
                                 strong Виктория #[br]Белякова
-                                span Руководитель службы клиентского сервиса
+                                span Руководитель службы #[br]клиентского сервиса
                         div.person
                             img(src="images/team/7.webp", alt="")
                             div.text
                                 strong Виктория #[br]Панина
-                                span Руководитель отдела продаж
+                                span Руководитель отдела #[br]продаж
                         div.person
                             img(src="images/team/8.webp", alt="")
                             div.text
                                 strong Николай #[br]Матюхин
-                                span Руководитель отдела аренды
+                                span Руководитель отдела #[br]аренды
 
             section.career
                 div.container
@@ -424,8 +425,6 @@ html(lang="ru")
                             div.tender
                                 strong Строительные материалы и оборудование
                                 span ЗАкупка и поставка
-
-
 
 
 

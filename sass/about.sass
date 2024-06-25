@@ -1,6 +1,6 @@
 // Media Query
 $breakpoints: ("xs": 480px, "s": 640px, "m": 960px, "l": 1280px, "xl": 1600px, 'xxl': 1920px)
-$content-maxwidth: 1438px
+$content-maxwidth: 1280px
 
 @mixin screen($breakpoint)
     @if map-has-key($breakpoints, $breakpoint)
@@ -79,7 +79,7 @@ section.main
     height: 100vh
     background-color: black
     color: white
-    animation: showcontent 1s 7s forwards
+    animation: showcontent 1s 6s forwards
 
     div.container
         display: grid
@@ -96,6 +96,7 @@ section.main
             transform: scale(0.6)
         +screen(m)
             transform: scale(0.4)
+            animation: scale_mobile .5s 4.5s forwards
         +screen(s)
             transform: scale(0.2)
 
@@ -104,6 +105,8 @@ section.main
         left: 50%
         transform: translateX(-50%)
         width: max-content
+        font-family: 'RoadRadio'
+        
         div.logo
             position: absolute
             display: grid
@@ -111,15 +114,15 @@ section.main
             grid-auto-flow: column
             grid-auto-columns: max-content
             opacity: 0
-            animation: show 1s 1s forwards, centerlogo .5s 4s forwards, scale 1s 5s forwards
+            animation: show .5s 1s forwards, centerlogo .5s 3.5s forwards, scale .5s 4.5s forwards
             text-transform: uppercase
             left: 0
             strong.gl
                 margin-right: 326px
-                animation: margingl .7s 4s forwards
+                animation: margingl .7s 3.5s forwards
             strong.in
                 margin-right: 463px
-                animation: marginin .7s 4s forwards
+                animation: marginin .7s 3.5s forwards
             div.border
                 position: absolute
                 top: -10%
@@ -134,7 +137,7 @@ section.main
                     position: absolute
                     top: 0
                     right: 0
-                    animation: width .1s 6s forwards
+                    animation: width .1s 5s forwards
                 span:nth-child(2)
                     display: block
                     width: 10px
@@ -143,7 +146,7 @@ section.main
                     position: absolute
                     top: 0
                     left: 0
-                    animation: height .1s 6.1s forwards
+                    animation: height .1s 5.1s forwards
                 span:nth-child(3)
                     display: block
                     width: 0px
@@ -152,7 +155,7 @@ section.main
                     position: absolute
                     bottom: 0
                     left: 0
-                    animation: width .1s 6.2s forwards
+                    animation: width .1s 5.2s forwards
                 span:nth-child(4)
                     display: block
                     width: 10px
@@ -161,7 +164,8 @@ section.main
                     position: absolute
                     bottom: 0
                     right: 0
-                    animation: height .1s 6.3s forwards
+                    animation: height .1s 5.3s forwards
+        
         div.full
             display: grid
             grid-template-columns: repeat(3, max-content)
@@ -172,27 +176,27 @@ section.main
                 strong
                     font-size: 80px
                 span
-                    font-size: 23px
+                    font-size: 19.5px
             div.gleaning
                 opacity: 0
-                animation: show 1s 0s forwards, hide 1s 3s forwards
+                animation: show .5s 0s forwards, hide 1s 3s forwards
                 span
-                    animation: show 1s 0s forwards
+                    animation: show .5s 0s forwards
             div.investment
                 opacity: 0
-                animation: show 1s 0.25s forwards, hide 1s 3s forwards
+                animation: show .5s 0.25s forwards, hide 1s 3s forwards
                 span
-                    animation: show 1s 0.25s forwards
+                    animation: show .5s 0.25s forwards
             div.combinations
                 opacity: 0
-                animation: show 1s 0.5s forwards, hide 1s 3s forwards
+                animation: show .5s 0.5s forwards, hide 1s 3s forwards
                 span
-                    animation: show 1s 0.5s forwards
-
+                    animation: show .5s 0.5s forwards
+        
         div.text
             opacity: 0
-            animation: show 1s 6s forwards
-            font-size: 30px
+            animation: show 1s 5s forwards
+            font-size: 31.75px
             text-align: center
             margin-top: 24px
             text-transform: uppercase
@@ -253,7 +257,6 @@ section.about
             & + p
                 margin-top: 26px
 
-
     div.advantages
         display: grid
         align-items: start
@@ -268,6 +271,32 @@ section.about
             margin-top: 22px
         +screen(s)
             grid-template-columns: 1fr
+
+        &.start
+            div.advantage:nth-child(1)
+                strong
+                    animation: counter1 1s forwards ease-in-out
+                    counter-reset: num var(--num)
+                    &::after
+                        content: counter(num)
+            div.advantage:nth-child(2)
+                strong
+                    animation: counter2 1s forwards ease-in-out
+                    counter-reset: num var(--num)
+                    &::after
+                        content: counter(num)
+            div.advantage:nth-child(3)
+                strong
+                    animation: counter3 1s forwards ease-in-out
+                    counter-reset: num var(--num)
+                    &::after
+                        content: counter(num)
+            div.advantage:nth-child(4)
+                strong
+                    animation: counter4 1s forwards ease-in-out
+                    counter-reset: num var(--num)
+                    &::after
+                        content: counter(num)
 
         div.advantage
             display: grid
@@ -643,22 +672,30 @@ section.awards
         +screen(l)
             grid-gap: 32px
 
+    div.swiper-wrapper
+        justify-content: center
+        +screen(m)
+            justify-content: start
+
     div.swiper-slide
         margin-top: unset !important
 
     div.swiper-pagination
         position: static
-        display: grid
+        display: none
         grid-auto-flow: column
         grid-auto-columns: 1fr
         grid-gap: 4px
         margin-top: 26px
+        +screen(m)
+            display: grid
         span
             width: 100%
-            height: 2px
+            height: 4px
             background-color: black
             opacity: 1
             margin: unset
+            border-radius: unset
             &.swiper-pagination-bullet-active
                 background-color: #808080
     
@@ -814,7 +851,10 @@ section.team
                     +screen(m)
                         font-size: 12px
                         color: #B1B1B1
-
+                br
+                    display: none
+                    +screen(m)
+                        display: block
             &:hover
                 img
                     filter: grayscale(0)
@@ -1117,7 +1157,6 @@ dialog[data-modal-name=project]
     align-items: center
     justify-items: center
     background-color: transparent
-    
 
     div.cross
         position: absolute
@@ -1267,6 +1306,32 @@ dialog[data-modal-name=project]
             text-align: center
             text-transform: uppercase
 
+@property --num
+    syntax: "<integer>"
+    initial-value: 0
+    inherits: false
+
+@keyframes counter1
+    0%
+        --num: 0
+    100%
+        --num: 11
+@keyframes counter2
+    0%
+        --num: 0
+    100%
+        --num: 182700
+@keyframes counter3
+    0%
+        --num: 0
+    100%
+        --num: 12
+@keyframes counter4
+    0%
+        --num: 0
+    100%
+        --num: 8
+
 @keyframes show 
     0%
         opacity: 0
@@ -1299,6 +1364,11 @@ dialog[data-modal-name=project]
         font-size: 80px
     100%
         font-size: 140px
+@keyframes scale_mobile
+    0%
+        transform: scale(0.4)
+    100%
+        transform: scale(0.45)
 @keyframes width
     0%
         width: 0

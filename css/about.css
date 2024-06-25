@@ -33,7 +33,7 @@
 :root {
   --gap: 30px;
   --full: minmax(var(--gap), 1fr);
-  --content: min(1438px, 100% - var(--gap) * 2);
+  --content: min(1280px, 100% - var(--gap) * 2);
   --breakout: minmax(0, 91px);
 }
 @media (max-width: 960px) {
@@ -88,8 +88,8 @@ section.main {
   height: 100vh;
   background-color: black;
   color: white;
-  -webkit-animation: showcontent 1s 7s forwards;
-          animation: showcontent 1s 7s forwards;
+  -webkit-animation: showcontent 1s 6s forwards;
+          animation: showcontent 1s 6s forwards;
 }
 section.main div.container {
   display: grid;
@@ -124,6 +124,8 @@ section.main div.logo_wrap {
     -webkit-transform: scale(0.4);
         -ms-transform: scale(0.4);
             transform: scale(0.4);
+    -webkit-animation: scale_mobile 0.5s 4.5s forwards;
+            animation: scale_mobile 0.5s 4.5s forwards;
   }
 }
 @media (max-width: 640px) {
@@ -142,6 +144,7 @@ section.main div.animation {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  font-family: "RoadRadio";
 }
 section.main div.animation div.logo {
   position: absolute;
@@ -151,20 +154,20 @@ section.main div.animation div.logo {
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
   opacity: 0;
-  -webkit-animation: show 1s 1s forwards, centerlogo 0.5s 4s forwards, scale 1s 5s forwards;
-          animation: show 1s 1s forwards, centerlogo 0.5s 4s forwards, scale 1s 5s forwards;
+  -webkit-animation: show 0.5s 1s forwards, centerlogo 0.5s 3.5s forwards, scale 0.5s 4.5s forwards;
+          animation: show 0.5s 1s forwards, centerlogo 0.5s 3.5s forwards, scale 0.5s 4.5s forwards;
   text-transform: uppercase;
   left: 0;
 }
 section.main div.animation div.logo strong.gl {
   margin-right: 326px;
-  -webkit-animation: margingl 0.7s 4s forwards;
-          animation: margingl 0.7s 4s forwards;
+  -webkit-animation: margingl 0.7s 3.5s forwards;
+          animation: margingl 0.7s 3.5s forwards;
 }
 section.main div.animation div.logo strong.in {
   margin-right: 463px;
-  -webkit-animation: marginin 0.7s 4s forwards;
-          animation: marginin 0.7s 4s forwards;
+  -webkit-animation: marginin 0.7s 3.5s forwards;
+          animation: marginin 0.7s 3.5s forwards;
 }
 section.main div.animation div.logo div.border {
   position: absolute;
@@ -181,8 +184,8 @@ section.main div.animation div.logo div.border span:nth-child(1) {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-animation: width 0.1s 6s forwards;
-          animation: width 0.1s 6s forwards;
+  -webkit-animation: width 0.1s 5s forwards;
+          animation: width 0.1s 5s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(2) {
   display: block;
@@ -192,8 +195,8 @@ section.main div.animation div.logo div.border span:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: height 0.1s 6.1s forwards;
-          animation: height 0.1s 6.1s forwards;
+  -webkit-animation: height 0.1s 5.1s forwards;
+          animation: height 0.1s 5.1s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(3) {
   display: block;
@@ -203,8 +206,8 @@ section.main div.animation div.logo div.border span:nth-child(3) {
   position: absolute;
   bottom: 0;
   left: 0;
-  -webkit-animation: width 0.1s 6.2s forwards;
-          animation: width 0.1s 6.2s forwards;
+  -webkit-animation: width 0.1s 5.2s forwards;
+          animation: width 0.1s 5.2s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(4) {
   display: block;
@@ -214,8 +217,8 @@ section.main div.animation div.logo div.border span:nth-child(4) {
   position: absolute;
   bottom: 0;
   right: 0;
-  -webkit-animation: height 0.1s 6.3s forwards;
-          animation: height 0.1s 6.3s forwards;
+  -webkit-animation: height 0.1s 5.3s forwards;
+          animation: height 0.1s 5.3s forwards;
 }
 section.main div.animation div.full {
   display: grid;
@@ -233,40 +236,40 @@ section.main div.animation div.full div strong {
   font-size: 80px;
 }
 section.main div.animation div.full div span {
-  font-size: 23px;
+  font-size: 19.5px;
 }
 section.main div.animation div.full div.gleaning {
   opacity: 0;
-  -webkit-animation: show 1s 0s forwards, hide 1s 3s forwards;
-          animation: show 1s 0s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.5s 0s forwards, hide 1s 3s forwards;
+          animation: show 0.5s 0s forwards, hide 1s 3s forwards;
 }
 section.main div.animation div.full div.gleaning span {
-  -webkit-animation: show 1s 0s forwards;
-          animation: show 1s 0s forwards;
+  -webkit-animation: show 0.5s 0s forwards;
+          animation: show 0.5s 0s forwards;
 }
 section.main div.animation div.full div.investment {
   opacity: 0;
-  -webkit-animation: show 1s 0.25s forwards, hide 1s 3s forwards;
-          animation: show 1s 0.25s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.5s 0.25s forwards, hide 1s 3s forwards;
+          animation: show 0.5s 0.25s forwards, hide 1s 3s forwards;
 }
 section.main div.animation div.full div.investment span {
-  -webkit-animation: show 1s 0.25s forwards;
-          animation: show 1s 0.25s forwards;
+  -webkit-animation: show 0.5s 0.25s forwards;
+          animation: show 0.5s 0.25s forwards;
 }
 section.main div.animation div.full div.combinations {
   opacity: 0;
-  -webkit-animation: show 1s 0.5s forwards, hide 1s 3s forwards;
-          animation: show 1s 0.5s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.5s 0.5s forwards, hide 1s 3s forwards;
+          animation: show 0.5s 0.5s forwards, hide 1s 3s forwards;
 }
 section.main div.animation div.full div.combinations span {
-  -webkit-animation: show 1s 0.5s forwards;
-          animation: show 1s 0.5s forwards;
+  -webkit-animation: show 0.5s 0.5s forwards;
+          animation: show 0.5s 0.5s forwards;
 }
 section.main div.animation div.text {
   opacity: 0;
-  -webkit-animation: show 1s 6s forwards;
-          animation: show 1s 6s forwards;
-  font-size: 30px;
+  -webkit-animation: show 1s 5s forwards;
+          animation: show 1s 5s forwards;
+  font-size: 31.75px;
   text-align: center;
   margin-top: 24px;
   text-transform: uppercase;
@@ -376,6 +379,38 @@ section.about div.advantages {
   section.about div.advantages {
     grid-template-columns: 1fr;
   }
+}
+section.about div.advantages.start div.advantage:nth-child(1) strong {
+  -webkit-animation: counter1 1s forwards ease-in-out;
+          animation: counter1 1s forwards ease-in-out;
+  counter-reset: num var(--num);
+}
+section.about div.advantages.start div.advantage:nth-child(1) strong::after {
+  content: counter(num);
+}
+section.about div.advantages.start div.advantage:nth-child(2) strong {
+  -webkit-animation: counter2 1s forwards ease-in-out;
+          animation: counter2 1s forwards ease-in-out;
+  counter-reset: num var(--num);
+}
+section.about div.advantages.start div.advantage:nth-child(2) strong::after {
+  content: counter(num);
+}
+section.about div.advantages.start div.advantage:nth-child(3) strong {
+  -webkit-animation: counter3 1s forwards ease-in-out;
+          animation: counter3 1s forwards ease-in-out;
+  counter-reset: num var(--num);
+}
+section.about div.advantages.start div.advantage:nth-child(3) strong::after {
+  content: counter(num);
+}
+section.about div.advantages.start div.advantage:nth-child(4) strong {
+  -webkit-animation: counter4 1s forwards ease-in-out;
+          animation: counter4 1s forwards ease-in-out;
+  counter-reset: num var(--num);
+}
+section.about div.advantages.start div.advantage:nth-child(4) strong::after {
+  content: counter(num);
 }
 section.about div.advantages div.advantage {
   display: grid;
@@ -925,23 +960,41 @@ section.awards div.list {
     grid-gap: 32px;
   }
 }
+section.awards div.swiper-wrapper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (max-width: 960px) {
+  section.awards div.swiper-wrapper {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
 section.awards div.swiper-slide {
   margin-top: unset !important;
 }
 section.awards div.swiper-pagination {
   position: static;
-  display: grid;
+  display: none;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   grid-gap: 4px;
   margin-top: 26px;
 }
+@media (max-width: 960px) {
+  section.awards div.swiper-pagination {
+    display: grid;
+  }
+}
 section.awards div.swiper-pagination span {
   width: 100%;
-  height: 2px;
+  height: 4px;
   background-color: black;
   opacity: 1;
   margin: unset;
+  border-radius: unset;
 }
 section.awards div.swiper-pagination span.swiper-pagination-bullet-active {
   background-color: #808080;
@@ -1169,6 +1222,14 @@ section.team div.list div.person div.text span {
   section.team div.list div.person div.text span {
     font-size: 12px;
     color: #B1B1B1;
+  }
+}
+section.team div.list div.person div.text br {
+  display: none;
+}
+@media (max-width: 960px) {
+  section.team div.list div.person div.text br {
+    display: block;
   }
 }
 section.team div.list div.person:hover img {
@@ -1788,6 +1849,75 @@ dialog[data-modal-name=project] form button {
   text-transform: uppercase;
 }
 
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@-webkit-keyframes counter1 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 11;
+  }
+}
+@keyframes counter1 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 11;
+  }
+}
+@-webkit-keyframes counter2 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 182700;
+  }
+}
+@keyframes counter2 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 182700;
+  }
+}
+@-webkit-keyframes counter3 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 12;
+  }
+}
+@keyframes counter3 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 12;
+  }
+}
+@-webkit-keyframes counter4 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 8;
+  }
+}
+@keyframes counter4 {
+  0% {
+    --num: 0;
+  }
+  100% {
+    --num: 8;
+  }
+}
 @-webkit-keyframes show {
   0% {
     opacity: 0;
@@ -1796,7 +1926,6 @@ dialog[data-modal-name=project] form button {
     opacity: 1;
   }
 }
-
 @keyframes show {
   0% {
     opacity: 0;
@@ -1891,6 +2020,26 @@ dialog[data-modal-name=project] form button {
   }
   100% {
     font-size: 140px;
+  }
+}
+@-webkit-keyframes scale_mobile {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    -webkit-transform: scale(0.45);
+            transform: scale(0.45);
+  }
+}
+@keyframes scale_mobile {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    -webkit-transform: scale(0.45);
+            transform: scale(0.45);
   }
 }
 @-webkit-keyframes width {
