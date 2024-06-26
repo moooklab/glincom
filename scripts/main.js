@@ -60,7 +60,7 @@ const digits = new IntersectionObserver( entries => {
     entries.forEach( entry => {
         entry.isIntersecting ? entry.target.classList.add('start') : entry.target.classList.remove('start')
         animateNumber(value => {
-            entry.target.textContent = Math.floor(value).toLocaleString('ru-RU')
+            entry.target.textContent = Math.floor(value)
         }, 0, Number(entry.target.textContent), 1000)
     })
 })
