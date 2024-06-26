@@ -58,10 +58,14 @@ new Swiper('section.awards div.swiper', {
 
 const digits = new IntersectionObserver( entries => {
     entries.forEach( entry => {
-        entry.isIntersecting ? entry.target.classList.add('start') : entry.target.classList.remove('start')
-        animateNumber(value => {
-            entry.target.textContent = Math.floor(value)
-        }, 0, Number(entry.target.textContent), 1000)
+        if( entry.isIntersecting ) {
+            entry.target.classList.add('start')
+            animateNumber(value => {
+                entry.target.textContent = Math.floor(value).toLocaleString()
+            }, 0, Number(entry.target.textContent), 1000)
+        } else {
+            entry.target.classList.remove('start')
+        }
     })
 })
 

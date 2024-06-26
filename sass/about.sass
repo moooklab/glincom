@@ -104,7 +104,7 @@ section.main
         position: relative
         left: 50%
         transform: translateX(-50%)
-        width: max-content
+        width: 1546px
         font-family: 'RoadRadio'
         
         div.logo
@@ -119,10 +119,10 @@ section.main
             left: 0
             strong.gl
                 margin-right: 326px
-                animation: margingl .7s 3.5s forwards
+                animation: margingl .5s 3.5s forwards
             strong.in
                 margin-right: 463px
-                animation: marginin .7s 3.5s forwards
+                animation: marginin .5s 3.5s forwards
             div.border
                 position: absolute
                 top: -10%
@@ -1305,15 +1305,16 @@ dialog[data-modal-name=project]
 @keyframes centerlogo
     0%
         left: 0
-        transform: translateX(0)
     100%
-        left: 50%
-        transform: translateX(-50%)
+        left: calc(50% - 175px)
+
 @keyframes scale
     0%
         font-size: 80px
+        left: calc(50% - 175px)
     100%
         font-size: 140px
+        left: calc(50% - 306px)
 @keyframes scale_mobile
     0%
         transform: scale(0.4)

@@ -141,9 +141,7 @@ section.main div.animation {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 1546px;
   font-family: "RoadRadio";
 }
 section.main div.animation div.logo {
@@ -161,13 +159,13 @@ section.main div.animation div.logo {
 }
 section.main div.animation div.logo strong.gl {
   margin-right: 326px;
-  -webkit-animation: margingl 0.7s 3.5s forwards;
-          animation: margingl 0.7s 3.5s forwards;
+  -webkit-animation: margingl 0.5s 3.5s forwards;
+          animation: margingl 0.5s 3.5s forwards;
 }
 section.main div.animation div.logo strong.in {
   margin-right: 463px;
-  -webkit-animation: marginin 0.7s 3.5s forwards;
-          animation: marginin 0.7s 3.5s forwards;
+  -webkit-animation: marginin 0.5s 3.5s forwards;
+          animation: marginin 0.5s 3.5s forwards;
 }
 section.main div.animation div.logo div.border {
   position: absolute;
@@ -1886,41 +1884,37 @@ dialog[data-modal-name=project] form button {
 @-webkit-keyframes centerlogo {
   0% {
     left: 0;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
   }
   100% {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    left: calc(50% - 175px);
   }
 }
 @keyframes centerlogo {
   0% {
     left: 0;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
   }
   100% {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    left: calc(50% - 175px);
   }
 }
 @-webkit-keyframes scale {
   0% {
     font-size: 80px;
+    left: calc(50% - 175px);
   }
   100% {
     font-size: 140px;
+    left: calc(50% - 306px);
   }
 }
 @keyframes scale {
   0% {
     font-size: 80px;
+    left: calc(50% - 175px);
   }
   100% {
     font-size: 140px;
+    left: calc(50% - 306px);
   }
 }
 @-webkit-keyframes scale_mobile {
