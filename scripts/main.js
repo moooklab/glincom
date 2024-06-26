@@ -53,3 +53,30 @@ new Swiper('section.awards div.swiper', {
         }
     }
 })
+
+
+
+const digits = new IntersectionObserver( entries => {
+    entries.forEach( entry => {
+        entry.isIntersecting ? entry.target.classList.add('start') : entry.target.classList.remove('start')
+        animateNumber(value => {
+            entry.target.textContent = Math.floor(value).toLocaleString('ru-RU')
+        }, 0, Number(entry.target.textContent), 1000)
+    })
+})
+
+var digitsElements = document.querySelectorAll('section.about div.advantage strong')
+digitsElements.forEach( element => digits.observe(element))
+
+function animateNumber(callback, from, to, duration) {
+    let start = null,
+    animate = timestamp => {
+        start = start || timestamp
+        let progress = Math.min((timestamp - start) / duration, 1)
+        callback(progress * (to - from) + from)
+        if(progress < 1) {
+            window.requestAnimationFrame(animate)
+        }
+    }
+    window.requestAnimationFrame(animate)
+}

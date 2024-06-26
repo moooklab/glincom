@@ -380,63 +380,12 @@ section.about div.advantages {
     grid-template-columns: 1fr;
   }
 }
-section.about div.advantages.start div.advantage:nth-child(1) strong {
-  -webkit-animation-name: counter1;
-          animation-name: counter1;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  counter-reset: num var(--num);
-}
-section.about div.advantages.start div.advantage:nth-child(1) strong::after {
-  content: counter(num);
-}
-section.about div.advantages.start div.advantage:nth-child(2) strong {
-  -webkit-animation-name: counter2;
-          animation-name: counter2;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  counter-reset: num var(--num);
-}
-section.about div.advantages.start div.advantage:nth-child(2) strong::after {
-  content: counter(num);
-}
-section.about div.advantages.start div.advantage:nth-child(3) strong {
-  -webkit-animation-name: counter3;
-          animation-name: counter3;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  counter-reset: num var(--num);
-}
-section.about div.advantages.start div.advantage:nth-child(3) strong::after {
-  content: counter(num);
-}
-section.about div.advantages.start div.advantage:nth-child(4) strong {
-  -webkit-animation-name: counter4;
-          animation-name: counter4;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  counter-reset: num var(--num);
-}
-section.about div.advantages.start div.advantage:nth-child(4) strong::after {
-  content: counter(num);
-}
 section.about div.advantages div.advantage {
   display: grid;
 }
 section.about div.advantages strong {
   font-weight: 700;
   font-size: 84px;
-}
-section.about div.advantages strong::after {
-  content: "0";
 }
 section.about div.advantages span {
   font-family: "RoadRadio";
@@ -1869,75 +1818,6 @@ dialog[data-modal-name=project] form button {
   text-transform: uppercase;
 }
 
-@property --num {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
-}
-@-webkit-keyframes counter1 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 11;
-  }
-}
-@keyframes counter1 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 11;
-  }
-}
-@-webkit-keyframes counter2 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 182700;
-  }
-}
-@keyframes counter2 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 182700;
-  }
-}
-@-webkit-keyframes counter3 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 12;
-  }
-}
-@keyframes counter3 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 12;
-  }
-}
-@-webkit-keyframes counter4 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 8;
-  }
-}
-@keyframes counter4 {
-  0% {
-    --num: 0;
-  }
-  100% {
-    --num: 8;
-  }
-}
 @-webkit-keyframes show {
   0% {
     opacity: 0;
@@ -1946,6 +1826,7 @@ dialog[data-modal-name=project] form button {
     opacity: 1;
   }
 }
+
 @keyframes show {
   0% {
     opacity: 0;

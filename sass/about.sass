@@ -272,48 +272,12 @@ section.about
         +screen(s)
             grid-template-columns: 1fr
 
-        &.start
-            div.advantage:nth-child(1)
-                strong
-                    animation-name: counter1
-                    animation-duration: 1s
-                    animation-fill-mode: forwards
-                    counter-reset: num var(--num)
-                    &::after
-                        content: counter(num)
-            div.advantage:nth-child(2)
-                strong
-                    animation-name: counter2
-                    animation-duration: 1s
-                    animation-fill-mode: forwards
-                    counter-reset: num var(--num)
-                    &::after
-                        content: counter(num)
-            div.advantage:nth-child(3)
-                strong
-                    animation-name: counter3
-                    animation-duration: 1s
-                    animation-fill-mode: forwards
-                    counter-reset: num var(--num)
-                    &::after
-                        content: counter(num)
-            div.advantage:nth-child(4)
-                strong
-                    animation-name: counter4
-                    animation-duration: 1s
-                    animation-fill-mode: forwards
-                    counter-reset: num var(--num)
-                    &::after
-                        content: counter(num)
-
         div.advantage
             display: grid
 
         strong
             font-weight: 700
             font-size: 84px
-            &::after
-                content: '0'
 
         span
             font-family: 'RoadRadio'
@@ -1317,31 +1281,6 @@ dialog[data-modal-name=project]
             text-align: center
             text-transform: uppercase
 
-@property --num
-    syntax: "<integer>"
-    initial-value: 0
-    inherits: false
-
-@keyframes counter1
-    0%
-        --num: 0
-    100%
-        --num: 11
-@keyframes counter2
-    0%
-        --num: 0
-    100%
-        --num: 182700
-@keyframes counter3
-    0%
-        --num: 0
-    100%
-        --num: 12
-@keyframes counter4
-    0%
-        --num: 0
-    100%
-        --num: 8
 
 @keyframes show 
     0%
