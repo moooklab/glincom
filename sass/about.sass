@@ -977,19 +977,33 @@ section.cooperation
             align-items: center
             +screen(m)
                 grid-gap: 11px
-                &:first-child
-                    position: relative
-                    grid-template-columns: 1fr
+                display: grid
+                grid-template-areas: 'Image Title' 'Buttons Buttons'
+                div.description
+                    display: contents
+                    h4
+                        grid-area: Title
+                    div.buttons
+                        grid-area: Buttons
                     div.image
-                        position: absolute
-                        top: 0
-                        left: 0
-                    div.description
-                        h4
-                            display: grid
-                            align-items: center
-                            margin-left: 152px
-                            min-height: 141px
+                        grid-area: Image
+                &:nth-child(2n)
+                    grid-template-areas: 'Title Image' 'Buttons Buttons'
+                    div.buttons
+                        justify-self: start
+                // &:first-child
+                //     position: relative
+                //     grid-template-columns: 1fr
+                //     div.image
+                //         position: absolute
+                //         top: 0
+                //         left: 0
+                //     div.description
+                //         h4
+                //             display: grid
+                //             align-items: center
+                //             margin-left: 152px
+                //             min-height: 141px
 
             div.image
                 position: relative
@@ -1026,6 +1040,7 @@ section.cooperation
                     max-width: 700px
                     +screen(m)
                         font-size: 15px
+                        margin-top: 11px
                         margin-bottom: 11px
                         max-width: 360px
                 div.buttons
@@ -1122,7 +1137,7 @@ dialog
     &::-webkit-scrollbar
         width: 0
         height: 0
-        
+
 dialog[data-modal-name=project]
     width: 100%
     height: 100%

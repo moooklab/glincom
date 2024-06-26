@@ -1415,23 +1415,26 @@ section.cooperation div.advantages div.advantage {
 @media (max-width: 960px) {
   section.cooperation div.advantages div.advantage {
     grid-gap: 11px;
-  }
-  section.cooperation div.advantages div.advantage:first-child {
-    position: relative;
-    grid-template-columns: 1fr;
-  }
-  section.cooperation div.advantages div.advantage:first-child div.image {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  section.cooperation div.advantages div.advantage:first-child div.description h4 {
     display: grid;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 152px;
-    min-height: 141px;
+    grid-template-areas: "Image Title" "Buttons Buttons";
+  }
+  section.cooperation div.advantages div.advantage div.description {
+    display: contents;
+  }
+  section.cooperation div.advantages div.advantage div.description h4 {
+    grid-area: Title;
+  }
+  section.cooperation div.advantages div.advantage div.description div.buttons {
+    grid-area: Buttons;
+  }
+  section.cooperation div.advantages div.advantage div.description div.image {
+    grid-area: Image;
+  }
+  section.cooperation div.advantages div.advantage:nth-child(2n) {
+    grid-template-areas: "Title Image" "Buttons Buttons";
+  }
+  section.cooperation div.advantages div.advantage:nth-child(2n) div.buttons {
+    justify-self: start;
   }
 }
 section.cooperation div.advantages div.advantage div.image {
@@ -1480,6 +1483,7 @@ section.cooperation div.advantages div.advantage div.description h4 {
 @media (max-width: 960px) {
   section.cooperation div.advantages div.advantage div.description h4 {
     font-size: 15px;
+    margin-top: 11px;
     margin-bottom: 11px;
     max-width: 360px;
   }

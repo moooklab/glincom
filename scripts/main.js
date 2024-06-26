@@ -62,7 +62,7 @@ const digits = new IntersectionObserver( entries => {
             entry.target.classList.add('start')
             animateNumber(value => {
                 entry.target.textContent = Math.floor(value).toLocaleString()
-            }, 0, Number(entry.target.textContent), 1000)
+            }, 0, Number(entry.target.textContent.replace(/\s/g, '')), 1000)
         } else {
             entry.target.classList.remove('start')
         }
