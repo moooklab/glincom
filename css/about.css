@@ -403,6 +403,9 @@ section.projects {
 section.projects div.container {
   grid-column: full;
 }
+section.projects div.slider {
+  display: grid;
+}
 section.projects div.swiper {
   width: 100%;
   min-width: 0;
