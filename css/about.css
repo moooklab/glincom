@@ -88,16 +88,52 @@ section.main {
   height: 100vh;
   background-color: black;
   color: white;
-  -webkit-animation: showcontent 1s 6s forwards;
-          animation: showcontent 1s 6s forwards;
+  -webkit-animation: showcontent 1s 7s forwards;
+          animation: showcontent 1s 7s forwards;
 }
 section.main div.container {
+  position: relative;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
   grid-column: full;
+}
+section.main div.menu {
+  grid-column: content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  grid-gap: 60px;
+  font-family: "RoadRadio", sans-serif;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+@media (max-width: 1180px) {
+  section.main div.menu {
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 960px) {
+  section.main div.menu {
+    display: none;
+  }
+}
+section.main div.menu a {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
 }
 section.main div.logo_wrap {
   width: 100vw;
@@ -124,8 +160,8 @@ section.main div.logo_wrap {
     -webkit-transform: scale(0.4);
         -ms-transform: scale(0.4);
             transform: scale(0.4);
-    -webkit-animation: scale_mobile 0.5s 4.5s forwards;
-            animation: scale_mobile 0.5s 4.5s forwards;
+    -webkit-animation: scale_mobile 0.5s 5.5s forwards;
+            animation: scale_mobile 0.5s 5.5s forwards;
   }
 }
 @media (max-width: 640px) {
@@ -152,20 +188,20 @@ section.main div.animation div.logo {
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
   opacity: 0;
-  -webkit-animation: show 0.5s 1s forwards, centerlogo 0.5s 3.5s forwards, scale 0.5s 4.5s forwards;
-          animation: show 0.5s 1s forwards, centerlogo 0.5s 3.5s forwards, scale 0.5s 4.5s forwards;
+  -webkit-animation: show 0.5s 3.5s forwards, centerlogo 0.5s 4.5s forwards, scale 0.5s 5.5s forwards;
+          animation: show 0.5s 3.5s forwards, centerlogo 0.5s 4.5s forwards, scale 0.5s 5.5s forwards;
   text-transform: uppercase;
   left: 0;
 }
 section.main div.animation div.logo strong.gl {
   margin-right: 326px;
-  -webkit-animation: margingl 0.5s 3.5s forwards;
-          animation: margingl 0.5s 3.5s forwards;
+  -webkit-animation: margingl 0.5s 4.5s forwards;
+          animation: margingl 0.5s 4.5s forwards;
 }
 section.main div.animation div.logo strong.in {
   margin-right: 463px;
-  -webkit-animation: marginin 0.5s 3.5s forwards;
-          animation: marginin 0.5s 3.5s forwards;
+  -webkit-animation: marginin 0.5s 4.5s forwards;
+          animation: marginin 0.5s 4.5s forwards;
 }
 section.main div.animation div.logo div.border {
   position: absolute;
@@ -182,8 +218,8 @@ section.main div.animation div.logo div.border span:nth-child(1) {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-animation: width 0.1s 5s forwards;
-          animation: width 0.1s 5s forwards;
+  -webkit-animation: width 0.1s 6.5s forwards;
+          animation: width 0.1s 6.5s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(2) {
   display: block;
@@ -193,8 +229,8 @@ section.main div.animation div.logo div.border span:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: height 0.1s 5.1s forwards;
-          animation: height 0.1s 5.1s forwards;
+  -webkit-animation: height 0.1s 6.6s forwards;
+          animation: height 0.1s 6.6s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(3) {
   display: block;
@@ -204,8 +240,8 @@ section.main div.animation div.logo div.border span:nth-child(3) {
   position: absolute;
   bottom: 0;
   left: 0;
-  -webkit-animation: width 0.1s 5.2s forwards;
-          animation: width 0.1s 5.2s forwards;
+  -webkit-animation: width 0.1s 6.7s forwards;
+          animation: width 0.1s 6.7s forwards;
 }
 section.main div.animation div.logo div.border span:nth-child(4) {
   display: block;
@@ -215,8 +251,8 @@ section.main div.animation div.logo div.border span:nth-child(4) {
   position: absolute;
   bottom: 0;
   right: 0;
-  -webkit-animation: height 0.1s 5.3s forwards;
-          animation: height 0.1s 5.3s forwards;
+  -webkit-animation: height 0.1s 6.8s forwards;
+          animation: height 0.1s 6.8s forwards;
 }
 section.main div.animation div.full {
   display: grid;
@@ -238,8 +274,8 @@ section.main div.animation div.full div span {
 }
 section.main div.animation div.full div.gleaning {
   opacity: 0;
-  -webkit-animation: show 0.5s 0s forwards, hide 1s 3s forwards;
-          animation: show 0.5s 0s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.75s 0.5s forwards, hide 1s 4s forwards;
+          animation: show 0.75s 0.5s forwards, hide 1s 4s forwards;
 }
 section.main div.animation div.full div.gleaning span {
   -webkit-animation: show 0.5s 0s forwards;
@@ -247,8 +283,8 @@ section.main div.animation div.full div.gleaning span {
 }
 section.main div.animation div.full div.investment {
   opacity: 0;
-  -webkit-animation: show 0.5s 0.25s forwards, hide 1s 3s forwards;
-          animation: show 0.5s 0.25s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.75s 1.5s forwards, hide 1s 4s forwards;
+          animation: show 0.75s 1.5s forwards, hide 1s 4s forwards;
 }
 section.main div.animation div.full div.investment span {
   -webkit-animation: show 0.5s 0.25s forwards;
@@ -256,8 +292,8 @@ section.main div.animation div.full div.investment span {
 }
 section.main div.animation div.full div.combinations {
   opacity: 0;
-  -webkit-animation: show 0.5s 0.5s forwards, hide 1s 3s forwards;
-          animation: show 0.5s 0.5s forwards, hide 1s 3s forwards;
+  -webkit-animation: show 0.75s 2.5s forwards, hide 1s 4s forwards;
+          animation: show 0.75s 2.5s forwards, hide 1s 4s forwards;
 }
 section.main div.animation div.full div.combinations span {
   -webkit-animation: show 0.5s 0.5s forwards;
@@ -265,8 +301,8 @@ section.main div.animation div.full div.combinations span {
 }
 section.main div.animation div.text {
   opacity: 0;
-  -webkit-animation: show 1s 5s forwards;
-          animation: show 1s 5s forwards;
+  -webkit-animation: show 1s 6s forwards;
+          animation: show 1s 6s forwards;
   font-size: 31.75px;
   text-align: center;
   margin-top: 24px;
@@ -399,6 +435,8 @@ section.projects {
           user-select: none;
   background-color: black;
   color: white;
+  overflow: hidden;
+  width: 100%;
 }
 section.projects div.container {
   grid-column: full;
