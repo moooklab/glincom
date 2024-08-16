@@ -693,7 +693,7 @@ section.priority {
 @media (max-width: 960px) {
   section.priority {
     padding-top: 28px;
-    padding-bottom: 28px;
+    padding-bottom: 40px;
   }
 }
 section.priority div.container {
@@ -714,7 +714,7 @@ section.priority h2 {
 @media (max-width: 960px) {
   section.priority h2 {
     font-size: 22px;
-    margin-bottom: 34px;
+    margin-bottom: 62px;
   }
 }
 section.priority h2::before {
@@ -747,7 +747,7 @@ section.priority div.list {
 }
 @media (max-width: 960px) {
   section.priority div.list {
-    grid-gap: 36px;
+    grid-gap: 44px;
   }
 }
 section.priority div.advantage {
@@ -814,8 +814,8 @@ section.priority div.advantage div.text h3:before, section.priority div.advantag
 }
 @media (max-width: 960px) {
   section.priority div.advantage div.text h3:before, section.priority div.advantage div.text h3:after {
-    width: 107px;
-    height: 107px;
+    width: 70px;
+    height: 70px;
     font-size: 48px;
   }
 }
