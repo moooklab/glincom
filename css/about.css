@@ -104,7 +104,7 @@ section.main div.menu {
   grid-column: content;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 50%;
   display: grid;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -116,11 +116,16 @@ section.main div.menu {
   font-family: "RoadRadio", sans-serif;
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 100%;
+  padding-right: 110px;
+  width: calc(100vw - var(--scrollbar-width));
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   section.main div.menu {
     grid-gap: 30px;
+    padding: 30px;
   }
 }
 @media (max-width: 960px) {
@@ -679,22 +684,22 @@ section.projects div.image {
      border-image: fill 1 linear-gradient(136deg, rgba(0, 0, 0, 0.37) 50%, rgba(10, 10, 10, 0) 75%, rgba(19, 19, 19, 0) 100%);
 }
 
-section.advantages {
+section.priority {
   padding-top: 72px;
   padding-bottom: 104px;
   background-color: black;
   color: white;
 }
 @media (max-width: 960px) {
-  section.advantages {
+  section.priority {
     padding-top: 28px;
     padding-bottom: 28px;
   }
 }
-section.advantages div.container {
+section.priority div.container {
   grid-column: breakout;
 }
-section.advantages h2 {
+section.priority h2 {
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -707,12 +712,12 @@ section.advantages h2 {
   margin-bottom: 58px;
 }
 @media (max-width: 960px) {
-  section.advantages h2 {
+  section.priority h2 {
     font-size: 22px;
     margin-bottom: 34px;
   }
 }
-section.advantages h2::before {
+section.priority h2::before {
   content: "02";
   display: grid;
   -webkit-box-align: center;
@@ -729,23 +734,23 @@ section.advantages h2::before {
   font-size: 95px;
 }
 @media (max-width: 960px) {
-  section.advantages h2::before {
+  section.priority h2::before {
     height: 105px;
     font-size: 64px;
     padding-right: 27px;
     margin-right: 27px;
   }
 }
-section.advantages div.list {
+section.priority div.list {
   display: grid;
   grid-gap: 138px;
 }
 @media (max-width: 960px) {
-  section.advantages div.list {
+  section.priority div.list {
     grid-gap: 36px;
   }
 }
-section.advantages div.advantage {
+section.priority div.advantage {
   counter-increment: list;
   display: grid;
   -webkit-box-align: start;
@@ -755,23 +760,23 @@ section.advantages div.advantage {
   margin-bottom: 210px;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage {
+  section.priority div.advantage {
     grid-template-columns: 1fr;
     margin-bottom: unset;
   }
 }
-section.advantages div.advantage div.text {
+section.priority div.advantage div.text {
   position: relative;
   display: grid;
   grid-gap: 86px;
-  z-index: 1;
+  z-index: 3;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage div.text {
+  section.priority div.advantage div.text {
     grid-gap: 30px;
   }
 }
-section.advantages div.advantage div.text h3 {
+section.priority div.advantage div.text h3 {
   font-family: "Muller", sans-serif;
   display: grid;
   grid-template-columns: -webkit-max-content auto;
@@ -785,18 +790,12 @@ section.advantages div.advantage div.text h3 {
   text-transform: uppercase;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage div.text h3 {
-    grid-template-columns: 1fr;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    justify-items: center;
-    text-align: center;
+  section.priority div.advantage div.text h3 {
     grid-gap: 21px;
     font-size: 20px;
   }
 }
-section.advantages div.advantage div.text h3:before, section.advantages div.advantage div.text h3:after {
+section.priority div.advantage div.text h3:before, section.priority div.advantage div.text h3:after {
   content: counter(list);
   font-family: "RoadRadio", sans-serif;
   display: grid;
@@ -814,51 +813,71 @@ section.advantages div.advantage div.text h3:before, section.advantages div.adva
   font-size: 70px;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage div.text h3:before, section.advantages div.advantage div.text h3:after {
+  section.priority div.advantage div.text h3:before, section.priority div.advantage div.text h3:after {
     width: 107px;
     height: 107px;
     font-size: 48px;
   }
 }
-section.advantages div.advantage div.text span {
+section.priority div.advantage div.text span {
   font-weight: 400;
   font-size: 40px;
 }
 @media (max-width: 1280px) {
-  section.advantages div.advantage div.text span {
+  section.priority div.advantage div.text span {
     font-size: 32px;
   }
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage div.text span {
+  section.priority div.advantage div.text span {
     font-size: 16px;
   }
 }
-section.advantages div.advantage div.image {
+section.priority div.advantage div.image {
+  position: relative;
   width: 130%;
   margin-left: -30%;
   height: calc(100% + 210px);
-  background-size: cover;
-  -o-border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
-     border-image: fill 1 -webkit-gradient(linear, right top, left top, color-stop(40%, rgba(19, 19, 19, 0)), to(rgba(19, 19, 19, 0.54)));
-     border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
+  overflow: hidden;
+}
+section.priority div.advantage div.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.priority div.advantage div.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(40%, rgba(19, 19, 19, 0)), to(rgba(19, 19, 19, 0.54)));
+  background: linear-gradient(270deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
+  z-index: 1;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage div.image {
+  section.priority div.advantage div.image {
     width: 100%;
     aspect-ratio: 324/221;
     margin-left: 32px;
     margin-top: -32px;
     height: auto;
-    -o-border-image: fill 1 linear-gradient(0deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
-       border-image: fill 1 -webkit-gradient(linear, left bottom, left top, color-stop(40%, rgba(19, 19, 19, 0)), to(rgba(19, 19, 19, 0.54)));
-       border-image: fill 1 linear-gradient(0deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
+  }
+  section.priority div.advantage div.image:after {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, rgba(19, 19, 19, 0)), to(rgba(19, 19, 19, 0.54)));
+    background: linear-gradient(0deg, rgba(19, 19, 19, 0) 40%, rgba(19, 19, 19, 0.54) 100%);
   }
 }
-section.advantages div.advantage:nth-child(2n-1) div.text h3::after {
+section.priority div.advantage:nth-child(2n-1) div.text h3::after {
   display: none;
 }
-section.advantages div.advantage:nth-child(2n) div.text {
+section.priority div.advantage:nth-child(2n) div.text {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -866,43 +885,38 @@ section.advantages div.advantage:nth-child(2n) div.text {
   justify-items: end;
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage:nth-child(2n) div.text {
+  section.priority div.advantage:nth-child(2n) div.text {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
     text-align: right;
-    justify-items: center;
   }
 }
-@media (max-width: 960px) {
-  section.advantages div.advantage:nth-child(2n) div.text h3::after {
-    display: none;
-  }
-}
-section.advantages div.advantage:nth-child(2n) div.text h3::before {
+section.priority div.advantage:nth-child(2n) div.text h3::before {
   display: none;
 }
-@media (max-width: 960px) {
-  section.advantages div.advantage:nth-child(2n) div.text h3::before {
-    display: grid;
-  }
-}
-section.advantages div.advantage:nth-child(2n) div.image {
+section.priority div.advantage:nth-child(2n) div.image {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   margin-left: unset;
-  -o-border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0.54) 40%, rgba(19, 19, 19, 0) 100%);
-     border-image: fill 1 -webkit-gradient(linear, right top, left top, color-stop(40%, rgba(19, 19, 19, 0.54)), to(rgba(19, 19, 19, 0)));
-     border-image: fill 1 linear-gradient(270deg, rgba(19, 19, 19, 0.54) 40%, rgba(19, 19, 19, 0) 100%);
+}
+section.priority div.advantage:nth-child(2n) div.image:after {
+  background: -webkit-gradient(linear, right top, left top, color-stop(40%, rgba(19, 19, 19, 0.54)), to(rgba(19, 19, 19, 0)));
+  background: linear-gradient(270deg, rgba(19, 19, 19, 0.54) 40%, rgba(19, 19, 19, 0) 100%);
 }
 @media (max-width: 960px) {
-  section.advantages div.advantage:nth-child(2n) div.image {
+  section.priority div.advantage:nth-child(2n) div.image {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     margin-left: -32px;
   }
+}
+section.priority div.advantage:hover div.image img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 section.awards {
@@ -967,6 +981,9 @@ section.awards div.list {
     grid-gap: 32px;
   }
 }
+section.awards div.swiper {
+  overflow: visible;
+}
 section.awards div.swiper-wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1020,6 +1037,8 @@ section.awards div.award img.logotype {
      object-fit: contain;
   -o-object-position: center bottom;
      object-position: center bottom;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 960px) {
   section.awards div.award img.logotype {
@@ -1088,6 +1107,11 @@ section.awards div.award div.table:after {
   height: 100%;
   width: 1px;
   background-color: #808080;
+}
+section.awards div.award:hover img.logotype {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 section.team {
@@ -1476,6 +1500,9 @@ section.cooperation div.advantages div.advantage {
   }
   section.cooperation div.advantages div.advantage:nth-child(2n) div.buttons {
     justify-self: start;
+  }
+  section.cooperation div.advantages div.advantage:nth-child(3) div.description {
+    display: block;
   }
 }
 section.cooperation div.advantages div.advantage div.image {
