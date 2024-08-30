@@ -91,6 +91,7 @@ html:has(dialog[open]) {
 }
 
 div.discount {
+  position: relative;
   padding-left: 40px;
   padding-right: 40px;
   max-width: 740px;
@@ -105,7 +106,13 @@ div.discount {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 65px;
+    min-height: 100dvh;
   }
+}
+div.discount div.cross {
+  position: absolute;
+  top: 43px;
+  right: 33px;
 }
 div.discount div.infographic img {
   max-width: 100%;
