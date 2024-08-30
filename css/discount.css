@@ -100,14 +100,13 @@ div.discount {
           box-sizing: content-box;
   padding-top: 95px;
   border-left: 1px solid #989898;
+  min-height: -webkit-fill-available;
 }
 @media (max-width: 640px) {
   div.discount {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 65px;
-    min-height: 100dvh;
-    height: 100dvh;
   }
 }
 div.discount div.cross {
