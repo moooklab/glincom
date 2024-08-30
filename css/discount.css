@@ -107,12 +107,21 @@ div.discount {
     padding-right: 30px;
     padding-top: 65px;
     min-height: 100dvh;
+    height: 100dvh;
   }
 }
 div.discount div.cross {
   position: absolute;
   top: 43px;
   right: 33px;
+}
+@media (max-width: 640px) {
+  div.discount div.cross {
+    width: 13px;
+    height: 13px;
+    top: 28px;
+    right: 14px;
+  }
 }
 div.discount div.infographic img {
   max-width: 100%;
